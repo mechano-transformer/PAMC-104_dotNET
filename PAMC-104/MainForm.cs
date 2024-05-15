@@ -18,7 +18,7 @@ namespace PAMC_104
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             RS232C rs232c = new RS232C(serialPort);
         }
