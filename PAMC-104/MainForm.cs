@@ -21,7 +21,7 @@ namespace PAMC_104
         private void MainForm_Load(object sender, EventArgs e)
         {
             RS232C rs232c = new RS232C(serialPort);
-            rs232c.send("testだよ～");
+            rs232c.send("NR15000010A");
         }
     }
 }

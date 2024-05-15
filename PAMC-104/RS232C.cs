@@ -69,13 +69,13 @@ namespace PAMC_104
         }
 
         // RS232C経由で情報を受信
-        public void receive(SerialDataReceivedEventArgs e)
+        public void receive(object sender, SerialDataReceivedEventArgs e)
         {
-            string strDataReceived = "";
+            string dataReceived = "";
             try
             {
-                strDataReceived = _serialPort.ReadLine();
-                MessageBox.Show(strDataReceived);
+                dataReceived = _serialPort.ReadLine();
+                MessageBox.Show(dataReceived);
 
             }
             catch (Exception ex)
