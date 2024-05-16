@@ -46,6 +46,19 @@
             this.excute_btn = new System.Windows.Forms.Button();
             this.axis_ComboBox = new System.Windows.Forms.ComboBox();
             this.axis_lbl = new System.Windows.Forms.Label();
+            this.baudRate_lbl = new System.Windows.Forms.Label();
+            this.baudRate_Box = new System.Windows.Forms.TextBox();
+            this.dataBits_lbl = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.stopBits_lbl = new System.Windows.Forms.Label();
+            this.stopBits_comboBox = new System.Windows.Forms.ComboBox();
+            this.parity_lbl = new System.Windows.Forms.Label();
+            this.parity_comboBox = new System.Windows.Forms.ComboBox();
+            this.flowControl_lbl = new System.Windows.Forms.Label();
+            this.flowControl_comboBox = new System.Windows.Forms.ComboBox();
+            this.timeout_lbl = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.conToggle_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // plus_btn
@@ -148,7 +161,6 @@
             this.cmdPort_text.Size = new System.Drawing.Size(29, 19);
             this.cmdPort_text.TabIndex = 10;
             this.cmdPort_text.Text = "A";
-            this.cmdPort_text.TextChanged += new System.EventHandler(this.cmdPort_text_TextChanged);
             // 
             // port_ComboBox
             // 
@@ -180,7 +192,7 @@
             // axis_ComboBox
             // 
             this.axis_ComboBox.FormattingEnabled = true;
-            this.axis_ComboBox.Location = new System.Drawing.Point(108, 487);
+            this.axis_ComboBox.Location = new System.Drawing.Point(108, 656);
             this.axis_ComboBox.Name = "axis_ComboBox";
             this.axis_ComboBox.Size = new System.Drawing.Size(121, 20);
             this.axis_ComboBox.TabIndex = 14;
@@ -189,17 +201,142 @@
             // axis_lbl
             // 
             this.axis_lbl.AutoSize = true;
-            this.axis_lbl.Location = new System.Drawing.Point(106, 472);
+            this.axis_lbl.Location = new System.Drawing.Point(106, 641);
             this.axis_lbl.Name = "axis_lbl";
             this.axis_lbl.Size = new System.Drawing.Size(28, 12);
             this.axis_lbl.TabIndex = 15;
             this.axis_lbl.Text = "Axis";
             // 
+            // baudRate_lbl
+            // 
+            this.baudRate_lbl.AutoSize = true;
+            this.baudRate_lbl.Location = new System.Drawing.Point(108, 233);
+            this.baudRate_lbl.Name = "baudRate_lbl";
+            this.baudRate_lbl.Size = new System.Drawing.Size(137, 18);
+            this.baudRate_lbl.TabIndex = 27;
+            this.baudRate_lbl.Text = "band rate(19200)";
+            // 
+            // baudRate_Box
+            // 
+            this.baudRate_Box.Location = new System.Drawing.Point(108, 251);
+            this.baudRate_Box.Name = "baudRate_Box";
+            this.baudRate_Box.Size = new System.Drawing.Size(100, 19);
+            this.baudRate_Box.TabIndex = 26;
+            this.baudRate_Box.Text = "115200";
+            // 
+            // dataBits_lbl
+            // 
+            this.dataBits_lbl.AutoSize = true;
+            this.dataBits_lbl.Location = new System.Drawing.Point(108, 286);
+            this.dataBits_lbl.Name = "dataBits_lbl";
+            this.dataBits_lbl.Size = new System.Drawing.Size(96, 18);
+            this.dataBits_lbl.TabIndex = 29;
+            this.dataBits_lbl.Text = "data bits(8)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(108, 304);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 19);
+            this.textBox1.TabIndex = 28;
+            this.textBox1.Text = "8";
+            // 
+            // stopBits_lbl
+            // 
+            this.stopBits_lbl.AutoSize = true;
+            this.stopBits_lbl.Location = new System.Drawing.Point(108, 385);
+            this.stopBits_lbl.Name = "stopBits_lbl";
+            this.stopBits_lbl.Size = new System.Drawing.Size(53, 12);
+            this.stopBits_lbl.TabIndex = 31;
+            this.stopBits_lbl.Text = "Stop Bits";
+            // 
+            // stopBits_comboBox
+            // 
+            this.stopBits_comboBox.FormattingEnabled = true;
+            this.stopBits_comboBox.Location = new System.Drawing.Point(108, 400);
+            this.stopBits_comboBox.Name = "stopBits_comboBox";
+            this.stopBits_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.stopBits_comboBox.TabIndex = 30;
+            // 
+            // parity_lbl
+            // 
+            this.parity_lbl.AutoSize = true;
+            this.parity_lbl.Location = new System.Drawing.Point(108, 338);
+            this.parity_lbl.Name = "parity_lbl";
+            this.parity_lbl.Size = new System.Drawing.Size(53, 18);
+            this.parity_lbl.TabIndex = 33;
+            this.parity_lbl.Text = "Parity";
+            // 
+            // parity_comboBox
+            // 
+            this.parity_comboBox.FormattingEnabled = true;
+            this.parity_comboBox.Location = new System.Drawing.Point(108, 353);
+            this.parity_comboBox.Name = "parity_comboBox";
+            this.parity_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.parity_comboBox.TabIndex = 32;
+            // 
+            // flowControl_lbl
+            // 
+            this.flowControl_lbl.AutoSize = true;
+            this.flowControl_lbl.Location = new System.Drawing.Point(108, 443);
+            this.flowControl_lbl.Name = "flowControl_lbl";
+            this.flowControl_lbl.Size = new System.Drawing.Size(105, 18);
+            this.flowControl_lbl.TabIndex = 35;
+            this.flowControl_lbl.Text = "Flow Control";
+            // 
+            // flowControl_comboBox
+            // 
+            this.flowControl_comboBox.FormattingEnabled = true;
+            this.flowControl_comboBox.Location = new System.Drawing.Point(108, 458);
+            this.flowControl_comboBox.Name = "flowControl_comboBox";
+            this.flowControl_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.flowControl_comboBox.TabIndex = 34;
+            // 
+            // timeout_lbl
+            // 
+            this.timeout_lbl.AutoSize = true;
+            this.timeout_lbl.Location = new System.Drawing.Point(110, 498);
+            this.timeout_lbl.Name = "timeout_lbl";
+            this.timeout_lbl.Size = new System.Drawing.Size(122, 18);
+            this.timeout_lbl.TabIndex = 37;
+            this.timeout_lbl.Text = "timeout(10sec)";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(110, 516);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 19);
+            this.textBox2.TabIndex = 36;
+            this.textBox2.Text = "10000";
+            // 
+            // conToggle_btn
+            // 
+            this.conToggle_btn.Location = new System.Drawing.Point(112, 576);
+            this.conToggle_btn.Name = "conToggle_btn";
+            this.conToggle_btn.Size = new System.Drawing.Size(75, 23);
+            this.conToggle_btn.TabIndex = 38;
+            this.conToggle_btn.Text = "Connect";
+            this.conToggle_btn.UseVisualStyleBackColor = true;
+            this.conToggle_btn.Click += new System.EventHandler(this.conToggle_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 880);
+            this.ClientSize = new System.Drawing.Size(1087, 877);
+            this.Controls.Add(this.conToggle_btn);
+            this.Controls.Add(this.timeout_lbl);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.flowControl_lbl);
+            this.Controls.Add(this.flowControl_comboBox);
+            this.Controls.Add(this.parity_lbl);
+            this.Controls.Add(this.parity_comboBox);
+            this.Controls.Add(this.stopBits_lbl);
+            this.Controls.Add(this.stopBits_comboBox);
+            this.Controls.Add(this.dataBits_lbl);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.baudRate_lbl);
+            this.Controls.Add(this.baudRate_Box);
             this.Controls.Add(this.axis_lbl);
             this.Controls.Add(this.axis_ComboBox);
             this.Controls.Add(this.excute_btn);
@@ -244,6 +381,19 @@
         private System.Windows.Forms.Button excute_btn;
         private System.Windows.Forms.ComboBox axis_ComboBox;
         private System.Windows.Forms.Label axis_lbl;
+        private System.Windows.Forms.Label baudRate_lbl;
+        private System.Windows.Forms.TextBox baudRate_Box;
+        private System.Windows.Forms.Label dataBits_lbl;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label stopBits_lbl;
+        private System.Windows.Forms.ComboBox stopBits_comboBox;
+        private System.Windows.Forms.Label parity_lbl;
+        private System.Windows.Forms.ComboBox parity_comboBox;
+        private System.Windows.Forms.Label flowControl_lbl;
+        private System.Windows.Forms.ComboBox flowControl_comboBox;
+        private System.Windows.Forms.Label timeout_lbl;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button conToggle_btn;
     }
 }
 

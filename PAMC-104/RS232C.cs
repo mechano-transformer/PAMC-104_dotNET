@@ -22,7 +22,7 @@ namespace PAMC_104
             _serialPort = serialPort;
             _serialPort.PortName = ports[0];
             _serialPort.PortName = ports[0];
-            _serialPort.BaudRate = 9600;
+            _serialPort.BaudRate = 115200;
             _serialPort.DataBits = 8;
             _serialPort.StopBits = StopBits.One;
             _serialPort.Parity = Parity.None;
