@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.IO.Ports;
 
 namespace PAMC_104
 {
@@ -32,8 +25,8 @@ namespace PAMC_104
             portSettings = new PortSettings();
 
             // RS232C用ポート候補
-            string[] serialPorts = RS232C.GetPortNames();
-            foreach (string port in serialPorts)
+            string[] ports = RS232C.GetPortNames();
+            foreach (string port in ports)
             {
                 port_ComboBox.Items.Add(port);
             }
@@ -151,6 +144,7 @@ namespace PAMC_104
             }
             catch (FormatException ex)
             {
+                MessageBox.Show(ex.Message);
                 // 変換に失敗した場合の処理
                 // エラーメッセージを表示するなど
             }
@@ -164,6 +158,7 @@ namespace PAMC_104
             }
             catch (FormatException ex)
             {
+                MessageBox.Show(ex.Message);
                 // 変換に失敗した場合の処理
                 // エラーメッセージを表示するなど
             }
@@ -192,6 +187,7 @@ namespace PAMC_104
             }
             catch (FormatException ex)
             {
+                MessageBox.Show(ex.Message);
                 // 変換に失敗した場合の処理
                 // エラーメッセージを表示するなど
             }
