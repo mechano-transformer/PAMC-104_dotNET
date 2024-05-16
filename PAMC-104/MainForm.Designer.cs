@@ -47,9 +47,9 @@
             this.axis_ComboBox = new System.Windows.Forms.ComboBox();
             this.axis_lbl = new System.Windows.Forms.Label();
             this.baudRate_lbl = new System.Windows.Forms.Label();
-            this.baudRate_Box = new System.Windows.Forms.TextBox();
+            this.baudRate_form = new System.Windows.Forms.TextBox();
             this.dataBits_lbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataBits_form = new System.Windows.Forms.TextBox();
             this.stopBits_lbl = new System.Windows.Forms.Label();
             this.stopBits_comboBox = new System.Windows.Forms.ComboBox();
             this.parity_lbl = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.flowControl_lbl = new System.Windows.Forms.Label();
             this.flowControl_comboBox = new System.Windows.Forms.ComboBox();
             this.timeout_lbl = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.timeout_form = new System.Windows.Forms.TextBox();
             this.conToggle_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -169,6 +169,7 @@
             this.port_ComboBox.Name = "port_ComboBox";
             this.port_ComboBox.Size = new System.Drawing.Size(121, 20);
             this.port_ComboBox.TabIndex = 11;
+            this.port_ComboBox.SelectedIndexChanged += new System.EventHandler(this.port_ComboBox_SelectedIndexChanged);
             // 
             // port
             // 
@@ -181,6 +182,7 @@
             // 
             // excute_btn
             // 
+            this.excute_btn.Enabled = false;
             this.excute_btn.Location = new System.Drawing.Point(783, 474);
             this.excute_btn.Name = "excute_btn";
             this.excute_btn.Size = new System.Drawing.Size(75, 23);
@@ -212,34 +214,36 @@
             this.baudRate_lbl.AutoSize = true;
             this.baudRate_lbl.Location = new System.Drawing.Point(108, 233);
             this.baudRate_lbl.Name = "baudRate_lbl";
-            this.baudRate_lbl.Size = new System.Drawing.Size(137, 18);
+            this.baudRate_lbl.Size = new System.Drawing.Size(91, 12);
             this.baudRate_lbl.TabIndex = 27;
             this.baudRate_lbl.Text = "band rate(19200)";
             // 
-            // baudRate_Box
+            // baudRate_form
             // 
-            this.baudRate_Box.Location = new System.Drawing.Point(108, 251);
-            this.baudRate_Box.Name = "baudRate_Box";
-            this.baudRate_Box.Size = new System.Drawing.Size(100, 19);
-            this.baudRate_Box.TabIndex = 26;
-            this.baudRate_Box.Text = "115200";
+            this.baudRate_form.Location = new System.Drawing.Point(108, 251);
+            this.baudRate_form.Name = "baudRate_form";
+            this.baudRate_form.Size = new System.Drawing.Size(100, 19);
+            this.baudRate_form.TabIndex = 26;
+            this.baudRate_form.Text = "115200";
+            this.baudRate_form.TextChanged += new System.EventHandler(this.baudRate_form_TextChanged);
             // 
             // dataBits_lbl
             // 
             this.dataBits_lbl.AutoSize = true;
             this.dataBits_lbl.Location = new System.Drawing.Point(108, 286);
             this.dataBits_lbl.Name = "dataBits_lbl";
-            this.dataBits_lbl.Size = new System.Drawing.Size(96, 18);
+            this.dataBits_lbl.Size = new System.Drawing.Size(64, 12);
             this.dataBits_lbl.TabIndex = 29;
             this.dataBits_lbl.Text = "data bits(8)";
             // 
-            // textBox1
+            // dataBits_form
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 304);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 19);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.Text = "8";
+            this.dataBits_form.Location = new System.Drawing.Point(108, 304);
+            this.dataBits_form.Name = "dataBits_form";
+            this.dataBits_form.Size = new System.Drawing.Size(100, 19);
+            this.dataBits_form.TabIndex = 28;
+            this.dataBits_form.Text = "8";
+            this.dataBits_form.TextChanged += new System.EventHandler(this.dataBits_form_TextChanged);
             // 
             // stopBits_lbl
             // 
@@ -257,13 +261,14 @@
             this.stopBits_comboBox.Name = "stopBits_comboBox";
             this.stopBits_comboBox.Size = new System.Drawing.Size(121, 20);
             this.stopBits_comboBox.TabIndex = 30;
+            this.stopBits_comboBox.SelectedIndexChanged += new System.EventHandler(this.stopBits_comboBox_SelectedIndexChanged);
             // 
             // parity_lbl
             // 
             this.parity_lbl.AutoSize = true;
             this.parity_lbl.Location = new System.Drawing.Point(108, 338);
             this.parity_lbl.Name = "parity_lbl";
-            this.parity_lbl.Size = new System.Drawing.Size(53, 18);
+            this.parity_lbl.Size = new System.Drawing.Size(35, 12);
             this.parity_lbl.TabIndex = 33;
             this.parity_lbl.Text = "Parity";
             // 
@@ -274,13 +279,14 @@
             this.parity_comboBox.Name = "parity_comboBox";
             this.parity_comboBox.Size = new System.Drawing.Size(121, 20);
             this.parity_comboBox.TabIndex = 32;
+            this.parity_comboBox.SelectedIndexChanged += new System.EventHandler(this.parity_comboBox_SelectedIndexChanged);
             // 
             // flowControl_lbl
             // 
             this.flowControl_lbl.AutoSize = true;
             this.flowControl_lbl.Location = new System.Drawing.Point(108, 443);
             this.flowControl_lbl.Name = "flowControl_lbl";
-            this.flowControl_lbl.Size = new System.Drawing.Size(105, 18);
+            this.flowControl_lbl.Size = new System.Drawing.Size(70, 12);
             this.flowControl_lbl.TabIndex = 35;
             this.flowControl_lbl.Text = "Flow Control";
             // 
@@ -291,23 +297,25 @@
             this.flowControl_comboBox.Name = "flowControl_comboBox";
             this.flowControl_comboBox.Size = new System.Drawing.Size(121, 20);
             this.flowControl_comboBox.TabIndex = 34;
+            this.flowControl_comboBox.SelectedIndexChanged += new System.EventHandler(this.flowControl_comboBox_SelectedIndexChanged);
             // 
             // timeout_lbl
             // 
             this.timeout_lbl.AutoSize = true;
             this.timeout_lbl.Location = new System.Drawing.Point(110, 498);
             this.timeout_lbl.Name = "timeout_lbl";
-            this.timeout_lbl.Size = new System.Drawing.Size(122, 18);
+            this.timeout_lbl.Size = new System.Drawing.Size(81, 12);
             this.timeout_lbl.TabIndex = 37;
             this.timeout_lbl.Text = "timeout(10sec)";
             // 
-            // textBox2
+            // timeout_form
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 516);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 19);
-            this.textBox2.TabIndex = 36;
-            this.textBox2.Text = "10000";
+            this.timeout_form.Location = new System.Drawing.Point(110, 516);
+            this.timeout_form.Name = "timeout_form";
+            this.timeout_form.Size = new System.Drawing.Size(100, 19);
+            this.timeout_form.TabIndex = 36;
+            this.timeout_form.Text = "10000";
+            this.timeout_form.TextChanged += new System.EventHandler(this.timeout_form_TextChanged);
             // 
             // conToggle_btn
             // 
@@ -326,7 +334,7 @@
             this.ClientSize = new System.Drawing.Size(1087, 877);
             this.Controls.Add(this.conToggle_btn);
             this.Controls.Add(this.timeout_lbl);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.timeout_form);
             this.Controls.Add(this.flowControl_lbl);
             this.Controls.Add(this.flowControl_comboBox);
             this.Controls.Add(this.parity_lbl);
@@ -334,9 +342,9 @@
             this.Controls.Add(this.stopBits_lbl);
             this.Controls.Add(this.stopBits_comboBox);
             this.Controls.Add(this.dataBits_lbl);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dataBits_form);
             this.Controls.Add(this.baudRate_lbl);
-            this.Controls.Add(this.baudRate_Box);
+            this.Controls.Add(this.baudRate_form);
             this.Controls.Add(this.axis_lbl);
             this.Controls.Add(this.axis_ComboBox);
             this.Controls.Add(this.excute_btn);
@@ -353,6 +361,7 @@
             this.Controls.Add(this.frequency_form);
             this.Controls.Add(this.minus_btn);
             this.Controls.Add(this.plus_btn);
+            this.Enabled = false;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -382,9 +391,9 @@
         private System.Windows.Forms.ComboBox axis_ComboBox;
         private System.Windows.Forms.Label axis_lbl;
         private System.Windows.Forms.Label baudRate_lbl;
-        private System.Windows.Forms.TextBox baudRate_Box;
+        private System.Windows.Forms.TextBox baudRate_form;
         private System.Windows.Forms.Label dataBits_lbl;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox dataBits_form;
         private System.Windows.Forms.Label stopBits_lbl;
         private System.Windows.Forms.ComboBox stopBits_comboBox;
         private System.Windows.Forms.Label parity_lbl;
@@ -392,7 +401,7 @@
         private System.Windows.Forms.Label flowControl_lbl;
         private System.Windows.Forms.ComboBox flowControl_comboBox;
         private System.Windows.Forms.Label timeout_lbl;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox timeout_form;
         private System.Windows.Forms.Button conToggle_btn;
     }
 }

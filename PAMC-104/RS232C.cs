@@ -9,30 +9,42 @@ using System.Windows.Forms;
 
 namespace PAMC_104
 {
+    public class PortSettings
+    {
+        public string Name { get; set; }
+        public int BaudRate { get; set; }
+        public int DataBits { get; set; }
+        public Parity Parity { get; set; }
+        public StopBits StopBits { get; set; }
+        public string FlowControl { get; set; }
+        public int Timeout { get; set; }
+
+    }
+
     public class RS232C
     {
         public string[] ports;
         SerialPort _serialPort;
         string DELIMITER = "\r\n";
 
-        public RS232C(SerialPort serialPort)
+        public RS232C(SerialPort serialPort, PortSettings portSettings)
         {
             // ポート情報を初期化
-            ports = SerialPort.GetPortNames();
             _serialPort = serialPort;
-            _serialPort.PortName = ports[0];
-            _serialPort.PortName = ports[0];
-            _serialPort.BaudRate = 115200;
-            _serialPort.DataBits = 8;
-            _serialPort.StopBits = StopBits.One;
-            _serialPort.Parity = Parity.None;
+            _serialPort.PortName = portSettings.Name;
+            _serialPort.BaudRate = portSettings.BaudRate;
+            _serialPort.DataBits = portSettings.DataBits;
+            _serialPort.Parity = portSettings.Parity;
+            _serialPort.StopBits = portSettings.StopBits;
+        }
 
-            // ポートオープン
-            open();
+        public static string[] GetPortNames()
+        {
+            return SerialPort.GetPortNames();
         }
 
         // ポートオープン
-        private void open()
+        public void Open()
         {
             // 既にポートが開いてるときは何もしない
             if (_serialPort.IsOpen) return;
@@ -48,17 +60,18 @@ namespace PAMC_104
         }
 
         // ポートを閉じる
-        private void close()
+        public void Close()
         {
             if (_serialPort.IsOpen == true) _serialPort.Close();
         }
 
         // RS232C経由で情報を送信
-        public void send(string content)
+        public void Send(string content)
         {
             _serialPort.NewLine = DELIMITER;
             try
             {
+                MessageBox.Show(content);
                 System.Console.WriteLine(content); // とりあえず動作検証用にコンソール出力
                 // _serialPort.Write(content); // 本チャンはこうやってRS232C経由で書きこむ
             }
@@ -69,7 +82,7 @@ namespace PAMC_104
         }
 
         // RS232C経由で情報を受信
-        public void receive(object sender, SerialDataReceivedEventArgs e)
+        public void Receive(object sender, SerialDataReceivedEventArgs e)
         {
             string dataReceived = "";
             try
@@ -84,7 +97,7 @@ namespace PAMC_104
             }
 
             // ポートを閉じる
-            close();
+            Close();
         }
     }
 }
