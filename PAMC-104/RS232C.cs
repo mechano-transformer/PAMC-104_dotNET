@@ -11,7 +11,7 @@ namespace PAMC_104
 {
     public class RS232C
     {
-        string[] ports;
+        public string[] ports;
         SerialPort _serialPort;
         string DELIMITER = "\r\n";
 

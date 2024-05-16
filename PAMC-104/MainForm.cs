@@ -8,16 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PAMC_104
 {
     public partial class MainForm : Form
     {
-        //private string command = "";
-        private string cmd_direction = "";
-        private string cmd_frequency = "";
-        private string cmd_numOfPulses = "";
-
+        private RS232C rs232c;
         public MainForm()
         {
             InitializeComponent();
@@ -25,8 +22,21 @@ namespace PAMC_104
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            RS232C rs232c = new RS232C(serialPort);
-            rs232c.send("NR15000010A");
+            rs232c = new RS232C(serialPort);
+
+            // RS232C用ポート候補
+            foreach (string port in rs232c.ports)
+            {
+                port_ComboBox.Items.Add(port);
+            }
+            if (port_ComboBox.Items.Count > 0)
+                port_ComboBox.SelectedIndex = 0;
+
+            // Axis選択用
+            string[] axis = { "(Choose)", "Axix1", "Axis2", "Axix3", "Axis4" };
+            axis_ComboBox.Items.AddRange(axis);
+            axis_ComboBox.SelectedIndex = 0;
+            
         }
 
         private void plus_btn_Click(object sender, EventArgs e)
@@ -54,6 +64,36 @@ namespace PAMC_104
             {
                 string result = inputVal.ToString("D4");
                 numOfPulses_form.Text = result;
+            }
+        }
+
+        
+        private void excute_btn_Click(object sender, EventArgs e)
+        {
+            string command = cmdDirection_text.Text + cmdFrequency_text.Text + cmdNumOfPulses_text.Text;
+            rs232c.send(command);
+        }
+
+        private void axis_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (axis_ComboBox.SelectedItem) 
+            {
+                case "Axis1":
+                    cmdPort_text.Text = "A";
+                    break;
+                case "Axis2":
+                    cmdPort_text.Text = "B";
+                    break;
+                case "Axis3":
+                    cmdPort_text.Text = "C";
+                    break;
+                case "Axis4":
+                    cmdPort_text.Text = "D";
+                    break;
+                default:
+                    cmdPort_text.Text = "";
+                    break;
+
             }
         }
     }
