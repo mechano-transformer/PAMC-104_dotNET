@@ -30,6 +30,7 @@ namespace PAMC_104
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.plus_btn = new System.Windows.Forms.Button();
             this.minus_btn = new System.Windows.Forms.Button();
@@ -78,7 +79,7 @@ namespace PAMC_104
             // plus_btn
             // 
             this.plus_btn.Location = new System.Drawing.Point(82, 79);
-            this.plus_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.plus_btn.Margin = new System.Windows.Forms.Padding(5);
             this.plus_btn.Name = "plus_btn";
             this.plus_btn.Size = new System.Drawing.Size(102, 50);
             this.plus_btn.TabIndex = 0;
@@ -89,7 +90,7 @@ namespace PAMC_104
             // minus_btn
             // 
             this.minus_btn.Location = new System.Drawing.Point(194, 79);
-            this.minus_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.minus_btn.Margin = new System.Windows.Forms.Padding(5);
             this.minus_btn.Name = "minus_btn";
             this.minus_btn.Size = new System.Drawing.Size(105, 50);
             this.minus_btn.TabIndex = 1;
@@ -100,7 +101,7 @@ namespace PAMC_104
             // frequency_form
             // 
             this.frequency_form.Location = new System.Drawing.Point(82, 167);
-            this.frequency_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.frequency_form.Margin = new System.Windows.Forms.Padding(5);
             this.frequency_form.Name = "frequency_form";
             this.frequency_form.Size = new System.Drawing.Size(164, 25);
             this.frequency_form.TabIndex = 2;
@@ -129,7 +130,7 @@ namespace PAMC_104
             // numOfPulses_form
             // 
             this.numOfPulses_form.Location = new System.Drawing.Point(82, 246);
-            this.numOfPulses_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.numOfPulses_form.Margin = new System.Windows.Forms.Padding(5);
             this.numOfPulses_form.Name = "numOfPulses_form";
             this.numOfPulses_form.Size = new System.Drawing.Size(164, 25);
             this.numOfPulses_form.TabIndex = 5;
@@ -149,7 +150,7 @@ namespace PAMC_104
             // cmdDirection_text
             // 
             this.cmdDirection_text.Location = new System.Drawing.Point(84, 344);
-            this.cmdDirection_text.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmdDirection_text.Margin = new System.Windows.Forms.Padding(5);
             this.cmdDirection_text.Name = "cmdDirection_text";
             this.cmdDirection_text.ReadOnly = true;
             this.cmdDirection_text.Size = new System.Drawing.Size(45, 25);
@@ -160,7 +161,7 @@ namespace PAMC_104
             // cmdFrequency_text
             // 
             this.cmdFrequency_text.Location = new System.Drawing.Point(139, 344);
-            this.cmdFrequency_text.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmdFrequency_text.Margin = new System.Windows.Forms.Padding(5);
             this.cmdFrequency_text.Name = "cmdFrequency_text";
             this.cmdFrequency_text.ReadOnly = true;
             this.cmdFrequency_text.Size = new System.Drawing.Size(73, 25);
@@ -170,7 +171,7 @@ namespace PAMC_104
             // cmdNumOfPulses_text
             // 
             this.cmdNumOfPulses_text.Location = new System.Drawing.Point(219, 344);
-            this.cmdNumOfPulses_text.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmdNumOfPulses_text.Margin = new System.Windows.Forms.Padding(5);
             this.cmdNumOfPulses_text.Name = "cmdNumOfPulses_text";
             this.cmdNumOfPulses_text.ReadOnly = true;
             this.cmdNumOfPulses_text.Size = new System.Drawing.Size(75, 25);
@@ -180,7 +181,7 @@ namespace PAMC_104
             // cmdPort_text
             // 
             this.cmdPort_text.Location = new System.Drawing.Point(300, 344);
-            this.cmdPort_text.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmdPort_text.Margin = new System.Windows.Forms.Padding(5);
             this.cmdPort_text.Name = "cmdPort_text";
             this.cmdPort_text.ReadOnly = true;
             this.cmdPort_text.Size = new System.Drawing.Size(45, 25);
@@ -191,7 +192,7 @@ namespace PAMC_104
             // 
             this.port_ComboBox.FormattingEnabled = true;
             this.port_ComboBox.Location = new System.Drawing.Point(60, 64);
-            this.port_ComboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.port_ComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.port_ComboBox.Name = "port_ComboBox";
             this.port_ComboBox.Size = new System.Drawing.Size(199, 26);
             this.port_ComboBox.TabIndex = 11;
@@ -210,7 +211,7 @@ namespace PAMC_104
             // excute_btn
             // 
             this.excute_btn.Location = new System.Drawing.Point(82, 419);
-            this.excute_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.excute_btn.Margin = new System.Windows.Forms.Padding(5);
             this.excute_btn.Name = "excute_btn";
             this.excute_btn.Size = new System.Drawing.Size(125, 35);
             this.excute_btn.TabIndex = 13;
@@ -222,7 +223,7 @@ namespace PAMC_104
             // 
             this.axis_ComboBox.FormattingEnabled = true;
             this.axis_ComboBox.Location = new System.Drawing.Point(64, 55);
-            this.axis_ComboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.axis_ComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.axis_ComboBox.Name = "axis_ComboBox";
             this.axis_ComboBox.Size = new System.Drawing.Size(199, 26);
             this.axis_ComboBox.TabIndex = 14;
@@ -252,7 +253,7 @@ namespace PAMC_104
             // baudRate_form
             // 
             this.baudRate_form.Location = new System.Drawing.Point(58, 150);
-            this.baudRate_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.baudRate_form.Margin = new System.Windows.Forms.Padding(5);
             this.baudRate_form.Name = "baudRate_form";
             this.baudRate_form.Size = new System.Drawing.Size(203, 25);
             this.baudRate_form.TabIndex = 26;
@@ -272,7 +273,7 @@ namespace PAMC_104
             // dataBits_form
             // 
             this.dataBits_form.Location = new System.Drawing.Point(58, 229);
-            this.dataBits_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dataBits_form.Margin = new System.Windows.Forms.Padding(5);
             this.dataBits_form.Name = "dataBits_form";
             this.dataBits_form.Size = new System.Drawing.Size(203, 25);
             this.dataBits_form.TabIndex = 28;
@@ -293,7 +294,7 @@ namespace PAMC_104
             // 
             this.stopBits_comboBox.FormattingEnabled = true;
             this.stopBits_comboBox.Location = new System.Drawing.Point(58, 373);
-            this.stopBits_comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.stopBits_comboBox.Margin = new System.Windows.Forms.Padding(5);
             this.stopBits_comboBox.Name = "stopBits_comboBox";
             this.stopBits_comboBox.Size = new System.Drawing.Size(199, 26);
             this.stopBits_comboBox.TabIndex = 30;
@@ -313,7 +314,7 @@ namespace PAMC_104
             // 
             this.parity_comboBox.FormattingEnabled = true;
             this.parity_comboBox.Location = new System.Drawing.Point(58, 302);
-            this.parity_comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.parity_comboBox.Margin = new System.Windows.Forms.Padding(5);
             this.parity_comboBox.Name = "parity_comboBox";
             this.parity_comboBox.Size = new System.Drawing.Size(199, 26);
             this.parity_comboBox.TabIndex = 32;
@@ -333,7 +334,7 @@ namespace PAMC_104
             // 
             this.flowControl_comboBox.FormattingEnabled = true;
             this.flowControl_comboBox.Location = new System.Drawing.Point(58, 460);
-            this.flowControl_comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowControl_comboBox.Margin = new System.Windows.Forms.Padding(5);
             this.flowControl_comboBox.Name = "flowControl_comboBox";
             this.flowControl_comboBox.Size = new System.Drawing.Size(199, 26);
             this.flowControl_comboBox.TabIndex = 34;
@@ -352,7 +353,7 @@ namespace PAMC_104
             // timeout_form
             // 
             this.timeout_form.Location = new System.Drawing.Point(62, 547);
-            this.timeout_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.timeout_form.Margin = new System.Windows.Forms.Padding(5);
             this.timeout_form.Name = "timeout_form";
             this.timeout_form.Size = new System.Drawing.Size(199, 25);
             this.timeout_form.TabIndex = 36;
@@ -362,7 +363,7 @@ namespace PAMC_104
             // conToggle_btn
             // 
             this.conToggle_btn.Location = new System.Drawing.Point(100, 610);
-            this.conToggle_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.conToggle_btn.Margin = new System.Windows.Forms.Padding(5);
             this.conToggle_btn.Name = "conToggle_btn";
             this.conToggle_btn.Size = new System.Drawing.Size(125, 35);
             this.conToggle_btn.TabIndex = 38;
@@ -374,7 +375,7 @@ namespace PAMC_104
             // 
             this.logTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.logTextBox.Location = new System.Drawing.Point(486, 750);
-            this.logTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
@@ -399,9 +400,9 @@ namespace PAMC_104
             this.connect_groupBox.Controls.Add(this.port);
             this.connect_groupBox.Controls.Add(this.port_ComboBox);
             this.connect_groupBox.Location = new System.Drawing.Point(118, 203);
-            this.connect_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connect_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.connect_groupBox.Name = "connect_groupBox";
-            this.connect_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connect_groupBox.Padding = new System.Windows.Forms.Padding(4);
             this.connect_groupBox.Size = new System.Drawing.Size(328, 664);
             this.connect_groupBox.TabIndex = 40;
             this.connect_groupBox.TabStop = false;
@@ -412,9 +413,9 @@ namespace PAMC_104
             this.axis_groupBox.Controls.Add(this.axis_lbl);
             this.axis_groupBox.Controls.Add(this.axis_ComboBox);
             this.axis_groupBox.Location = new System.Drawing.Point(116, 890);
-            this.axis_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axis_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.axis_groupBox.Name = "axis_groupBox";
-            this.axis_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axis_groupBox.Padding = new System.Windows.Forms.Padding(4);
             this.axis_groupBox.Size = new System.Drawing.Size(330, 103);
             this.axis_groupBox.TabIndex = 41;
             this.axis_groupBox.TabStop = false;
@@ -437,9 +438,9 @@ namespace PAMC_104
             this.driverController_groupBox.Controls.Add(this.minus_btn);
             this.driverController_groupBox.Controls.Add(this.plus_btn);
             this.driverController_groupBox.Location = new System.Drawing.Point(486, 214);
-            this.driverController_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.driverController_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.driverController_groupBox.Name = "driverController_groupBox";
-            this.driverController_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.driverController_groupBox.Padding = new System.Windows.Forms.Padding(4);
             this.driverController_groupBox.Size = new System.Drawing.Size(399, 476);
             this.driverController_groupBox.TabIndex = 42;
             this.driverController_groupBox.TabStop = false;
@@ -448,7 +449,7 @@ namespace PAMC_104
             // stop_btn
             // 
             this.stop_btn.Location = new System.Drawing.Point(221, 419);
-            this.stop_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stop_btn.Margin = new System.Windows.Forms.Padding(4);
             this.stop_btn.Name = "stop_btn";
             this.stop_btn.Size = new System.Drawing.Size(125, 35);
             this.stop_btn.TabIndex = 44;
@@ -470,9 +471,9 @@ namespace PAMC_104
             // 
             this.indicator_groupBox.Controls.Add(this.statusIndicator_text);
             this.indicator_groupBox.Location = new System.Drawing.Point(921, 225);
-            this.indicator_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.indicator_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.indicator_groupBox.Name = "indicator_groupBox";
-            this.indicator_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.indicator_groupBox.Padding = new System.Windows.Forms.Padding(4);
             this.indicator_groupBox.Size = new System.Drawing.Size(326, 118);
             this.indicator_groupBox.TabIndex = 43;
             this.indicator_groupBox.TabStop = false;
@@ -481,7 +482,7 @@ namespace PAMC_104
             // statusIndicator_text
             // 
             this.statusIndicator_text.Location = new System.Drawing.Point(43, 56);
-            this.statusIndicator_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusIndicator_text.Margin = new System.Windows.Forms.Padding(4);
             this.statusIndicator_text.Name = "statusIndicator_text";
             this.statusIndicator_text.ReadOnly = true;
             this.statusIndicator_text.Size = new System.Drawing.Size(235, 25);
@@ -508,6 +509,7 @@ namespace PAMC_104
             this.Controls.Add(this.axis_groupBox);
             this.Controls.Add(this.connect_groupBox);
             this.Controls.Add(this.logTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "MainForm";
             this.Text = "PAMC-104";
