@@ -4,6 +4,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PAMC_104
 {
@@ -247,5 +248,24 @@ namespace PAMC_104
             portSettings.FlowControl = RS232C.FLOW_CONTROLS[flowControl_comboBox.SelectedIndex];
             portSettings.Timeout = int.Parse(timeout_form.Text);
         }
+
+        private void frequency_form_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = IsSkipKeyInput(frequency_form, e);
+        }
+
+        private void numOfPulses_form_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = IsSkipKeyInput(numOfPulses_form, e);
+        }
+
+        private bool IsSkipKeyInput(System.Windows.Forms.TextBox textBox, KeyPressEventArgs e)
+        {
+            // 数字以外のキーは無視する
+            // ４文字を超えるキー入力も受け付けない
+            // ただしBackSpaceキー等の制御キーは受け付ける
+            return ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) || (textBox.Text.Length >= 4 && !char.IsControl(e.KeyChar)));
+        }
+
     }
 }

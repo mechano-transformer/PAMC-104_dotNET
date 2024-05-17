@@ -105,6 +105,7 @@ namespace PAMC_104
             this.frequency_form.Size = new System.Drawing.Size(164, 25);
             this.frequency_form.TabIndex = 2;
             this.frequency_form.TextChanged += new System.EventHandler(this.frequency_form_TextChanged);
+            this.frequency_form.KeyPress += this.frequency_form_KeyPress;
             // 
             // frequency_lbl
             // 
@@ -134,6 +135,8 @@ namespace PAMC_104
             this.numOfPulses_form.Size = new System.Drawing.Size(164, 25);
             this.numOfPulses_form.TabIndex = 5;
             this.numOfPulses_form.TextChanged += new System.EventHandler(this.numOfPulses_form_TextChanged);
+            this.numOfPulses_form.KeyPress += this.numOfPulses_form_KeyPress;
+
             // 
             // cmdToSend_lbl
             // 
