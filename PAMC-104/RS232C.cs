@@ -85,6 +85,7 @@ namespace PAMC_104
             try
             {
                 _serialPort.Write(content); // 本チャンはこうやってRS232C経由で書きこむ
+                _logger.Notice($"Excuted command: {content}");
             }
             catch (Exception ex)
             {

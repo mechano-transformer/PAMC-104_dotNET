@@ -25,7 +25,7 @@ namespace PAMC_104
         private void MainForm_Load(object sender, EventArgs e)
         {
             _logger = Logger.GetInstance;
-            SetExcuteButtonEnability(false);
+            SetExcuteButtonEnable(false);
 
             portSettings = new PortSettings();
 
@@ -141,11 +141,12 @@ namespace PAMC_104
                 }
                 catch (Exception ex)
                 {
+                    SetStatusMessage("Failed to connect.", true);
                     return;
                 }
 
                 // コマンド実行ボタンの有効化
-                SetExcuteButtonEnability(true);
+                SetExcuteButtonEnable(true);
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Disconnect";
                 SetStatusMessage("Connected successfully.");
@@ -158,10 +159,11 @@ namespace PAMC_104
                 }
                 catch (Exception ex)
                 {
+                    SetStatusMessage("Failed to disconnect.", true);
                     return;
                 }
 
-                SetExcuteButtonEnability(false);
+                SetExcuteButtonEnable(false);
 
 
                 // ボタンの表示を切り替える
@@ -254,12 +256,19 @@ namespace PAMC_104
             }
         }
 
-        private void SetStatusMessage(string text)
+        private void SetStatusMessage(string text, bool isError = false)
         {
             statusIndicator_text.Text = text;
+            if (isError)
+            {
+                _logger.Error(text);
+            } else
+            {
+                _logger.Notice(text);
+            }
         }
 
-        private void SetExcuteButtonEnability(bool activate)
+        private void SetExcuteButtonEnable(bool activate)
         {
             excute_btn.Enabled = activate;
         }
