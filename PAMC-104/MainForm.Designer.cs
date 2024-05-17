@@ -1,4 +1,6 @@
-﻿namespace PAMC_104
+﻿using System.Windows.Shapes.Ellipse;
+
+namespace PAMC_104
 {
     partial class MainForm
     {
@@ -60,11 +62,19 @@
             this.timeout_form = new System.Windows.Forms.TextBox();
             this.conToggle_btn = new System.Windows.Forms.Button();
             this.logTextBox = new System.Windows.Forms.TextBox();
+            this.connect_groupBox = new System.Windows.Forms.GroupBox();
+            this.axis_groupBox = new System.Windows.Forms.GroupBox();
+            this.driverController_groupBox = new System.Windows.Forms.GroupBox();
+            this.direction_lbl = new System.Windows.Forms.Label();
+            this.indicator_groupBox = new System.Windows.Forms.GroupBox();
+            this.connect_groupBox.SuspendLayout();
+            this.axis_groupBox.SuspendLayout();
+            this.driverController_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // plus_btn
             // 
-            this.plus_btn.Location = new System.Drawing.Point(1008, 215);
+            this.plus_btn.Location = new System.Drawing.Point(64, 66);
             this.plus_btn.Margin = new System.Windows.Forms.Padding(4);
             this.plus_btn.Name = "plus_btn";
             this.plus_btn.Size = new System.Drawing.Size(41, 42);
@@ -75,7 +85,7 @@
             // 
             // minus_btn
             // 
-            this.minus_btn.Location = new System.Drawing.Point(1057, 215);
+            this.minus_btn.Location = new System.Drawing.Point(113, 66);
             this.minus_btn.Margin = new System.Windows.Forms.Padding(4);
             this.minus_btn.Name = "minus_btn";
             this.minus_btn.Size = new System.Drawing.Size(43, 42);
@@ -86,7 +96,7 @@
             // 
             // frequency_form
             // 
-            this.frequency_form.Location = new System.Drawing.Point(1008, 314);
+            this.frequency_form.Location = new System.Drawing.Point(66, 139);
             this.frequency_form.Margin = new System.Windows.Forms.Padding(4);
             this.frequency_form.Name = "frequency_form";
             this.frequency_form.Size = new System.Drawing.Size(132, 22);
@@ -96,7 +106,7 @@
             // frequency_lbl
             // 
             this.frequency_lbl.AutoSize = true;
-            this.frequency_lbl.Location = new System.Drawing.Point(1008, 291);
+            this.frequency_lbl.Location = new System.Drawing.Point(66, 116);
             this.frequency_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.frequency_lbl.Name = "frequency_lbl";
             this.frequency_lbl.Size = new System.Drawing.Size(71, 15);
@@ -106,7 +116,7 @@
             // numOfPulses_lbl
             // 
             this.numOfPulses_lbl.AutoSize = true;
-            this.numOfPulses_lbl.Location = new System.Drawing.Point(1011, 380);
+            this.numOfPulses_lbl.Location = new System.Drawing.Point(66, 185);
             this.numOfPulses_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numOfPulses_lbl.Name = "numOfPulses_lbl";
             this.numOfPulses_lbl.Size = new System.Drawing.Size(78, 15);
@@ -115,7 +125,7 @@
             // 
             // numOfPulses_form
             // 
-            this.numOfPulses_form.Location = new System.Drawing.Point(1011, 400);
+            this.numOfPulses_form.Location = new System.Drawing.Point(66, 205);
             this.numOfPulses_form.Margin = new System.Windows.Forms.Padding(4);
             this.numOfPulses_form.Name = "numOfPulses_form";
             this.numOfPulses_form.Size = new System.Drawing.Size(132, 22);
@@ -125,7 +135,7 @@
             // cmdToSend_lbl
             // 
             this.cmdToSend_lbl.AutoSize = true;
-            this.cmdToSend_lbl.Location = new System.Drawing.Point(1008, 456);
+            this.cmdToSend_lbl.Location = new System.Drawing.Point(64, 261);
             this.cmdToSend_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmdToSend_lbl.Name = "cmdToSend_lbl";
             this.cmdToSend_lbl.Size = new System.Drawing.Size(120, 20);
@@ -135,7 +145,7 @@
             // 
             // cmdDirection_text
             // 
-            this.cmdDirection_text.Location = new System.Drawing.Point(1011, 482);
+            this.cmdDirection_text.Location = new System.Drawing.Point(67, 287);
             this.cmdDirection_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdDirection_text.Name = "cmdDirection_text";
             this.cmdDirection_text.ReadOnly = true;
@@ -146,7 +156,7 @@
             // 
             // cmdFrequency_text
             // 
-            this.cmdFrequency_text.Location = new System.Drawing.Point(1055, 482);
+            this.cmdFrequency_text.Location = new System.Drawing.Point(111, 287);
             this.cmdFrequency_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdFrequency_text.Name = "cmdFrequency_text";
             this.cmdFrequency_text.ReadOnly = true;
@@ -156,7 +166,7 @@
             // 
             // cmdNumOfPulses_text
             // 
-            this.cmdNumOfPulses_text.Location = new System.Drawing.Point(1119, 482);
+            this.cmdNumOfPulses_text.Location = new System.Drawing.Point(175, 287);
             this.cmdNumOfPulses_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdNumOfPulses_text.Name = "cmdNumOfPulses_text";
             this.cmdNumOfPulses_text.ReadOnly = true;
@@ -166,7 +176,7 @@
             // 
             // cmdPort_text
             // 
-            this.cmdPort_text.Location = new System.Drawing.Point(1184, 482);
+            this.cmdPort_text.Location = new System.Drawing.Point(240, 287);
             this.cmdPort_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdPort_text.Name = "cmdPort_text";
             this.cmdPort_text.ReadOnly = true;
@@ -177,7 +187,7 @@
             // port_ComboBox
             // 
             this.port_ComboBox.FormattingEnabled = true;
-            this.port_ComboBox.Location = new System.Drawing.Point(144, 232);
+            this.port_ComboBox.Location = new System.Drawing.Point(48, 53);
             this.port_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.port_ComboBox.Name = "port_ComboBox";
             this.port_ComboBox.Size = new System.Drawing.Size(160, 23);
@@ -187,7 +197,7 @@
             // port
             // 
             this.port.AutoSize = true;
-            this.port.Location = new System.Drawing.Point(141, 196);
+            this.port.Location = new System.Drawing.Point(45, 34);
             this.port.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.port.Name = "port";
             this.port.Size = new System.Drawing.Size(34, 15);
@@ -196,7 +206,7 @@
             // 
             // excute_btn
             // 
-            this.excute_btn.Location = new System.Drawing.Point(1044, 592);
+            this.excute_btn.Location = new System.Drawing.Point(86, 348);
             this.excute_btn.Margin = new System.Windows.Forms.Padding(4);
             this.excute_btn.Name = "excute_btn";
             this.excute_btn.Size = new System.Drawing.Size(100, 29);
@@ -208,7 +218,7 @@
             // axis_ComboBox
             // 
             this.axis_ComboBox.FormattingEnabled = true;
-            this.axis_ComboBox.Location = new System.Drawing.Point(144, 820);
+            this.axis_ComboBox.Location = new System.Drawing.Point(51, 46);
             this.axis_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.axis_ComboBox.Name = "axis_ComboBox";
             this.axis_ComboBox.Size = new System.Drawing.Size(160, 23);
@@ -218,7 +228,7 @@
             // axis_lbl
             // 
             this.axis_lbl.AutoSize = true;
-            this.axis_lbl.Location = new System.Drawing.Point(141, 801);
+            this.axis_lbl.Location = new System.Drawing.Point(48, 27);
             this.axis_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.axis_lbl.Name = "axis_lbl";
             this.axis_lbl.Size = new System.Drawing.Size(33, 15);
@@ -228,7 +238,7 @@
             // baudRate_lbl
             // 
             this.baudRate_lbl.AutoSize = true;
-            this.baudRate_lbl.Location = new System.Drawing.Point(144, 291);
+            this.baudRate_lbl.Location = new System.Drawing.Point(48, 112);
             this.baudRate_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.baudRate_lbl.Name = "baudRate_lbl";
             this.baudRate_lbl.Size = new System.Drawing.Size(116, 15);
@@ -237,7 +247,7 @@
             // 
             // baudRate_form
             // 
-            this.baudRate_form.Location = new System.Drawing.Point(144, 314);
+            this.baudRate_form.Location = new System.Drawing.Point(48, 135);
             this.baudRate_form.Margin = new System.Windows.Forms.Padding(4);
             this.baudRate_form.Name = "baudRate_form";
             this.baudRate_form.Size = new System.Drawing.Size(132, 22);
@@ -248,7 +258,7 @@
             // dataBits_lbl
             // 
             this.dataBits_lbl.AutoSize = true;
-            this.dataBits_lbl.Location = new System.Drawing.Point(144, 358);
+            this.dataBits_lbl.Location = new System.Drawing.Point(48, 179);
             this.dataBits_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dataBits_lbl.Name = "dataBits_lbl";
             this.dataBits_lbl.Size = new System.Drawing.Size(78, 15);
@@ -257,7 +267,7 @@
             // 
             // dataBits_form
             // 
-            this.dataBits_form.Location = new System.Drawing.Point(144, 380);
+            this.dataBits_form.Location = new System.Drawing.Point(48, 201);
             this.dataBits_form.Margin = new System.Windows.Forms.Padding(4);
             this.dataBits_form.Name = "dataBits_form";
             this.dataBits_form.Size = new System.Drawing.Size(132, 22);
@@ -268,7 +278,7 @@
             // stopBits_lbl
             // 
             this.stopBits_lbl.AutoSize = true;
-            this.stopBits_lbl.Location = new System.Drawing.Point(144, 481);
+            this.stopBits_lbl.Location = new System.Drawing.Point(48, 302);
             this.stopBits_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stopBits_lbl.Name = "stopBits_lbl";
             this.stopBits_lbl.Size = new System.Drawing.Size(66, 15);
@@ -278,7 +288,7 @@
             // stopBits_comboBox
             // 
             this.stopBits_comboBox.FormattingEnabled = true;
-            this.stopBits_comboBox.Location = new System.Drawing.Point(144, 500);
+            this.stopBits_comboBox.Location = new System.Drawing.Point(48, 321);
             this.stopBits_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.stopBits_comboBox.Name = "stopBits_comboBox";
             this.stopBits_comboBox.Size = new System.Drawing.Size(160, 23);
@@ -288,7 +298,7 @@
             // parity_lbl
             // 
             this.parity_lbl.AutoSize = true;
-            this.parity_lbl.Location = new System.Drawing.Point(144, 422);
+            this.parity_lbl.Location = new System.Drawing.Point(48, 243);
             this.parity_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.parity_lbl.Name = "parity_lbl";
             this.parity_lbl.Size = new System.Drawing.Size(43, 15);
@@ -298,7 +308,7 @@
             // parity_comboBox
             // 
             this.parity_comboBox.FormattingEnabled = true;
-            this.parity_comboBox.Location = new System.Drawing.Point(144, 441);
+            this.parity_comboBox.Location = new System.Drawing.Point(48, 262);
             this.parity_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.parity_comboBox.Name = "parity_comboBox";
             this.parity_comboBox.Size = new System.Drawing.Size(160, 23);
@@ -308,7 +318,7 @@
             // flowControl_lbl
             // 
             this.flowControl_lbl.AutoSize = true;
-            this.flowControl_lbl.Location = new System.Drawing.Point(144, 554);
+            this.flowControl_lbl.Location = new System.Drawing.Point(48, 375);
             this.flowControl_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.flowControl_lbl.Name = "flowControl_lbl";
             this.flowControl_lbl.Size = new System.Drawing.Size(88, 15);
@@ -318,7 +328,7 @@
             // flowControl_comboBox
             // 
             this.flowControl_comboBox.FormattingEnabled = true;
-            this.flowControl_comboBox.Location = new System.Drawing.Point(144, 572);
+            this.flowControl_comboBox.Location = new System.Drawing.Point(48, 393);
             this.flowControl_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.flowControl_comboBox.Name = "flowControl_comboBox";
             this.flowControl_comboBox.Size = new System.Drawing.Size(160, 23);
@@ -328,7 +338,7 @@
             // timeout_lbl
             // 
             this.timeout_lbl.AutoSize = true;
-            this.timeout_lbl.Location = new System.Drawing.Point(147, 622);
+            this.timeout_lbl.Location = new System.Drawing.Point(51, 443);
             this.timeout_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timeout_lbl.Name = "timeout_lbl";
             this.timeout_lbl.Size = new System.Drawing.Size(104, 15);
@@ -337,7 +347,7 @@
             // 
             // timeout_form
             // 
-            this.timeout_form.Location = new System.Drawing.Point(147, 645);
+            this.timeout_form.Location = new System.Drawing.Point(51, 466);
             this.timeout_form.Margin = new System.Windows.Forms.Padding(4);
             this.timeout_form.Name = "timeout_form";
             this.timeout_form.Size = new System.Drawing.Size(132, 22);
@@ -347,7 +357,7 @@
             // 
             // conToggle_btn
             // 
-            this.conToggle_btn.Location = new System.Drawing.Point(149, 720);
+            this.conToggle_btn.Location = new System.Drawing.Point(80, 508);
             this.conToggle_btn.Margin = new System.Windows.Forms.Padding(4);
             this.conToggle_btn.Name = "conToggle_btn";
             this.conToggle_btn.Size = new System.Drawing.Size(100, 29);
@@ -358,52 +368,109 @@
             // 
             // logTextBox
             // 
-            this.logTextBox.Location = new System.Drawing.Point(570, 687);
+            this.logTextBox.Location = new System.Drawing.Point(392, 676);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
             this.logTextBox.Size = new System.Drawing.Size(713, 203);
             this.logTextBox.TabIndex = 39;
             // 
+            // connect_groupBox
+            // 
+            this.connect_groupBox.Controls.Add(this.timeout_lbl);
+            this.connect_groupBox.Controls.Add(this.timeout_form);
+            this.connect_groupBox.Controls.Add(this.conToggle_btn);
+            this.connect_groupBox.Controls.Add(this.flowControl_lbl);
+            this.connect_groupBox.Controls.Add(this.flowControl_comboBox);
+            this.connect_groupBox.Controls.Add(this.parity_lbl);
+            this.connect_groupBox.Controls.Add(this.parity_comboBox);
+            this.connect_groupBox.Controls.Add(this.stopBits_lbl);
+            this.connect_groupBox.Controls.Add(this.stopBits_comboBox);
+            this.connect_groupBox.Controls.Add(this.dataBits_lbl);
+            this.connect_groupBox.Controls.Add(this.dataBits_form);
+            this.connect_groupBox.Controls.Add(this.baudRate_lbl);
+            this.connect_groupBox.Controls.Add(this.baudRate_form);
+            this.connect_groupBox.Controls.Add(this.port);
+            this.connect_groupBox.Controls.Add(this.port_ComboBox);
+            this.connect_groupBox.Location = new System.Drawing.Point(96, 179);
+            this.connect_groupBox.Name = "connect_groupBox";
+            this.connect_groupBox.Size = new System.Drawing.Size(262, 553);
+            this.connect_groupBox.TabIndex = 40;
+            this.connect_groupBox.TabStop = false;
+            this.connect_groupBox.Text = "Connect";
+            // 
+            // axis_groupBox
+            // 
+            this.axis_groupBox.Controls.Add(this.axis_lbl);
+            this.axis_groupBox.Controls.Add(this.axis_ComboBox);
+            this.axis_groupBox.Location = new System.Drawing.Point(441, 169);
+            this.axis_groupBox.Name = "axis_groupBox";
+            this.axis_groupBox.Size = new System.Drawing.Size(264, 86);
+            this.axis_groupBox.TabIndex = 41;
+            this.axis_groupBox.TabStop = false;
+            this.axis_groupBox.Text = "Axis";
+            // 
+            // driverController_groupBox
+            // 
+            this.driverController_groupBox.Controls.Add(this.direction_lbl);
+            this.driverController_groupBox.Controls.Add(this.excute_btn);
+            this.driverController_groupBox.Controls.Add(this.cmdPort_text);
+            this.driverController_groupBox.Controls.Add(this.cmdNumOfPulses_text);
+            this.driverController_groupBox.Controls.Add(this.cmdFrequency_text);
+            this.driverController_groupBox.Controls.Add(this.cmdDirection_text);
+            this.driverController_groupBox.Controls.Add(this.cmdToSend_lbl);
+            this.driverController_groupBox.Controls.Add(this.numOfPulses_form);
+            this.driverController_groupBox.Controls.Add(this.numOfPulses_lbl);
+            this.driverController_groupBox.Controls.Add(this.frequency_lbl);
+            this.driverController_groupBox.Controls.Add(this.frequency_form);
+            this.driverController_groupBox.Controls.Add(this.minus_btn);
+            this.driverController_groupBox.Controls.Add(this.plus_btn);
+            this.driverController_groupBox.Location = new System.Drawing.Point(441, 273);
+            this.driverController_groupBox.Name = "driverController_groupBox";
+            this.driverController_groupBox.Size = new System.Drawing.Size(319, 397);
+            this.driverController_groupBox.TabIndex = 42;
+            this.driverController_groupBox.TabStop = false;
+            this.driverController_groupBox.Text = "Driver Controller";
+            // 
+            // direction_lbl
+            // 
+            this.direction_lbl.AutoSize = true;
+            this.direction_lbl.Location = new System.Drawing.Point(66, 42);
+            this.direction_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.direction_lbl.Name = "direction_lbl";
+            this.direction_lbl.Size = new System.Drawing.Size(62, 15);
+            this.direction_lbl.TabIndex = 14;
+            this.direction_lbl.Text = "direction";
+            // 
+            // indicator_groupBox
+            // 
+            this.indicator_groupBox.Location = new System.Drawing.Point(97, 760);
+            this.indicator_groupBox.Name = "indicator_groupBox";
+            this.indicator_groupBox.Size = new System.Drawing.Size(261, 152);
+            this.indicator_groupBox.TabIndex = 43;
+            this.indicator_groupBox.TabStop = false;
+            this.indicator_groupBox.Text = "Status Indicator";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1449, 1096);
+            this.ClientSize = new System.Drawing.Size(1219, 1096);
+            this.Controls.Add(this.indicator_groupBox);
+            this.Controls.Add(this.driverController_groupBox);
+            this.Controls.Add(this.axis_groupBox);
+            this.Controls.Add(this.connect_groupBox);
             this.Controls.Add(this.logTextBox);
-            this.Controls.Add(this.conToggle_btn);
-            this.Controls.Add(this.timeout_lbl);
-            this.Controls.Add(this.timeout_form);
-            this.Controls.Add(this.flowControl_lbl);
-            this.Controls.Add(this.flowControl_comboBox);
-            this.Controls.Add(this.parity_lbl);
-            this.Controls.Add(this.parity_comboBox);
-            this.Controls.Add(this.stopBits_lbl);
-            this.Controls.Add(this.stopBits_comboBox);
-            this.Controls.Add(this.dataBits_lbl);
-            this.Controls.Add(this.dataBits_form);
-            this.Controls.Add(this.baudRate_lbl);
-            this.Controls.Add(this.baudRate_form);
-            this.Controls.Add(this.axis_lbl);
-            this.Controls.Add(this.axis_ComboBox);
-            this.Controls.Add(this.excute_btn);
-            this.Controls.Add(this.port);
-            this.Controls.Add(this.port_ComboBox);
-            this.Controls.Add(this.cmdPort_text);
-            this.Controls.Add(this.cmdNumOfPulses_text);
-            this.Controls.Add(this.cmdFrequency_text);
-            this.Controls.Add(this.cmdDirection_text);
-            this.Controls.Add(this.cmdToSend_lbl);
-            this.Controls.Add(this.numOfPulses_form);
-            this.Controls.Add(this.numOfPulses_lbl);
-            this.Controls.Add(this.frequency_lbl);
-            this.Controls.Add(this.frequency_form);
-            this.Controls.Add(this.minus_btn);
-            this.Controls.Add(this.plus_btn);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.connect_groupBox.ResumeLayout(false);
+            this.connect_groupBox.PerformLayout();
+            this.axis_groupBox.ResumeLayout(false);
+            this.axis_groupBox.PerformLayout();
+            this.driverController_groupBox.ResumeLayout(false);
+            this.driverController_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,6 +509,11 @@
         private System.Windows.Forms.TextBox timeout_form;
         private System.Windows.Forms.Button conToggle_btn;
         private System.Windows.Forms.TextBox logTextBox;
+        private System.Windows.Forms.GroupBox connect_groupBox;
+        private System.Windows.Forms.GroupBox axis_groupBox;
+        private System.Windows.Forms.GroupBox driverController_groupBox;
+        private System.Windows.Forms.Label direction_lbl;
+        private System.Windows.Forms.GroupBox indicator_groupBox;
     }
 }
 
