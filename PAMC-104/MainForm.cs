@@ -10,11 +10,12 @@ namespace PAMC_104
     public partial class MainForm : Form
     {
         private RS232C rs232c;
-        private string[] axis = { "(None)", "Axix1", "Axis2", "Axix3", "Axis4" };
-        private StopBits[] stopBits = { StopBits.None, StopBits.One, StopBits.OnePointFive, StopBits.Two };
+        private string[] axis = { "None", "Axis1", "Axis2", "Axix3", "Axis4" };
+        private StopBits[] stopBits = { StopBits.One, StopBits.Two, StopBits.OnePointFive };
         private Parity[] parities = { Parity.None, Parity.Odd, Parity.Even, Parity.Mark, Parity.Space };
-        private string[] flowControls = { "(None)", "XON/XOFF", "RTS/CTS", "XON/XOFF & RTS/CTS", "DTR/DSR", "XON/XOFF & DTR/DSR" };
+        private string[] flowControls = { "None", "XON/XOFF", "RTS/CTS", "XON/XOFF & RTS/CTS", "DTR/DSR", "XON/XOFF & DTR/DSR" };
         private PortSettings portSettings;
+        private Logger _logger = Logger.Instance;
 
         public MainForm()
         {
@@ -54,6 +55,9 @@ namespace PAMC_104
             // flow control選択用
             flowControl_comboBox.Items.AddRange(flowControls);
             flowControl_comboBox.SelectedIndex = 0;
+
+            _logger.Notice("Main loaded.");
+            AppendGUILog("Main loaded.");
         }
 
         private void plus_btn_Click(object sender, EventArgs e)
@@ -131,6 +135,7 @@ namespace PAMC_104
                 // Connectする
                 try
                 {
+                    SetPortSettings();
                     rs232c = new RS232C(serialPort, portSettings);
                     rs232c.Open();
                 }
@@ -161,7 +166,7 @@ namespace PAMC_104
 
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Connect";
-                SetStatusMessage("Connection failed.");
+                SetStatusMessage("Disconnected successfully.");
             }
         }
 
@@ -287,5 +292,23 @@ namespace PAMC_104
             minus_btn.Enabled = true;
 
         }
+
+        private void SetPortSettings()
+        {
+            portSettings.Name = port_ComboBox.SelectedItem.ToString();
+            portSettings.BaudRate = int.Parse(baudRate_form.Text);
+
+            portSettings.DataBits = int.Parse(dataBits_form.Text);
+
+            portSettings.Parity = parities[parity_comboBox.SelectedIndex];
+
+            portSettings.StopBits = stopBits[stopBits_comboBox.SelectedIndex];
+
+            portSettings.FlowControl = flowControls[flowControl_comboBox.SelectedIndex];
+
+            portSettings.Timeout = int.Parse(timeout_form.Text);
+
+        }
+
     }
 }

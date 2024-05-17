@@ -141,7 +141,8 @@ namespace PAMC_104
                 // ログラベル：ERROR, WARN, NOTICEがログとして出る
                 if (level == LogLevel.ERROR || level == LogLevel.NOTICE || level == LogLevel.WARN)
                 {
-                    mainForm.AppendGUILog(fullMsg);
+                    //TODO:ここうまく動かない
+                    //mainForm.AppendGUILog(fullMsg);
                 }
 
                 // 3. ファイルサイズ検証とログローテーション

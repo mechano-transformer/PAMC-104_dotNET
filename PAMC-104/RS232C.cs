@@ -23,10 +23,11 @@ namespace PAMC_104
 
     public class RS232C
     {
+        public bool isPortConnected = false;
         public string[] ports;
         SerialPort _serialPort;
         string DELIMITER = "\r\n";
-        private static Logger _logger = new Logger();
+        private Logger _logger = Logger.Instance;
 
         public RS232C(SerialPort serialPort, PortSettings portSettings)
         {
@@ -49,7 +50,6 @@ namespace PAMC_104
 
         public static string[] GetPortNames()
         {
-            _logger.Error("test");
             return SerialPort.GetPortNames();
         }
 
@@ -62,17 +62,19 @@ namespace PAMC_104
             try
             {
                 _serialPort.Open();
+                isPortConnected = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _logger.Error(ex.Message);
             }
         }
 
         // ポートを閉じる
         public void Close()
         {
-            if (_serialPort.IsOpen == true) _serialPort.Close();
+            isPortConnected = false;
+            _serialPort.Close();
         }
 
         // RS232C経由で情報を送信
@@ -81,13 +83,12 @@ namespace PAMC_104
             _serialPort.NewLine = DELIMITER;
             try
             {
-                MessageBox.Show(content);
-                System.Console.WriteLine(content); // とりあえず動作検証用にコンソール出力
-                // _serialPort.Write(content); // 本チャンはこうやってRS232C経由で書きこむ
+                _serialPort.Write(content); // 本チャンはこうやってRS232C経由で書きこむ
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
+                _logger.Error(ex.Message);
             }
             return Task.CompletedTask;
         }
@@ -104,7 +105,7 @@ namespace PAMC_104
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.Message); 一応これダイアログ出るね
+                _logger.Error(ex.Message);
             }
 
             // ポートを閉じる
