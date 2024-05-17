@@ -47,7 +47,6 @@ namespace PAMC_104
             this.port = new System.Windows.Forms.Label();
             this.excute_btn = new System.Windows.Forms.Button();
             this.axis_ComboBox = new System.Windows.Forms.ComboBox();
-            this.axis_lbl = new System.Windows.Forms.Label();
             this.baudRate_lbl = new System.Windows.Forms.Label();
             this.baudRate_form = new System.Windows.Forms.TextBox();
             this.dataBits_lbl = new System.Windows.Forms.Label();
@@ -196,7 +195,6 @@ namespace PAMC_104
             this.port_ComboBox.Name = "port_ComboBox";
             this.port_ComboBox.Size = new System.Drawing.Size(199, 26);
             this.port_ComboBox.TabIndex = 11;
-            this.port_ComboBox.SelectedIndexChanged += new System.EventHandler(this.port_ComboBox_SelectedIndexChanged);
             // 
             // port
             // 
@@ -222,23 +220,11 @@ namespace PAMC_104
             // axis_ComboBox
             // 
             this.axis_ComboBox.FormattingEnabled = true;
-            this.axis_ComboBox.Location = new System.Drawing.Point(64, 55);
+            this.axis_ComboBox.Location = new System.Drawing.Point(60, 37);
             this.axis_ComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.axis_ComboBox.Name = "axis_ComboBox";
             this.axis_ComboBox.Size = new System.Drawing.Size(199, 26);
             this.axis_ComboBox.TabIndex = 14;
-            this.axis_ComboBox.SelectedIndexChanged += new System.EventHandler(this.axis_ComboBox_SelectedIndexChanged);
-            // 
-            // axis_lbl
-            // 
-            this.axis_lbl.AutoSize = true;
-            this.axis_lbl.Location = new System.Drawing.Point(60, 32);
-            this.axis_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.axis_lbl.Name = "axis_lbl";
-            this.axis_lbl.Size = new System.Drawing.Size(39, 18);
-            this.axis_lbl.TabIndex = 15;
-            this.axis_lbl.Text = "Axis";
-            this.axis_lbl.Click += new System.EventHandler(this.axis_lbl_Click);
             // 
             // baudRate_lbl
             // 
@@ -258,7 +244,6 @@ namespace PAMC_104
             this.baudRate_form.Size = new System.Drawing.Size(203, 25);
             this.baudRate_form.TabIndex = 26;
             this.baudRate_form.Text = "115200";
-            this.baudRate_form.TextChanged += new System.EventHandler(this.baudRate_form_TextChanged);
             // 
             // dataBits_lbl
             // 
@@ -278,7 +263,6 @@ namespace PAMC_104
             this.dataBits_form.Size = new System.Drawing.Size(203, 25);
             this.dataBits_form.TabIndex = 28;
             this.dataBits_form.Text = "8";
-            this.dataBits_form.TextChanged += new System.EventHandler(this.dataBits_form_TextChanged);
             // 
             // stopBits_lbl
             // 
@@ -298,7 +282,6 @@ namespace PAMC_104
             this.stopBits_comboBox.Name = "stopBits_comboBox";
             this.stopBits_comboBox.Size = new System.Drawing.Size(199, 26);
             this.stopBits_comboBox.TabIndex = 30;
-            this.stopBits_comboBox.SelectedIndexChanged += new System.EventHandler(this.stopBits_comboBox_SelectedIndexChanged);
             // 
             // parity_lbl
             // 
@@ -318,12 +301,11 @@ namespace PAMC_104
             this.parity_comboBox.Name = "parity_comboBox";
             this.parity_comboBox.Size = new System.Drawing.Size(199, 26);
             this.parity_comboBox.TabIndex = 32;
-            this.parity_comboBox.SelectedIndexChanged += new System.EventHandler(this.parity_comboBox_SelectedIndexChanged);
             // 
             // flowControl_lbl
             // 
             this.flowControl_lbl.AutoSize = true;
-            this.flowControl_lbl.Location = new System.Drawing.Point(58, 438);
+            this.flowControl_lbl.Location = new System.Drawing.Point(55, 430);
             this.flowControl_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.flowControl_lbl.Name = "flowControl_lbl";
             this.flowControl_lbl.Size = new System.Drawing.Size(103, 18);
@@ -333,17 +315,16 @@ namespace PAMC_104
             // flowControl_comboBox
             // 
             this.flowControl_comboBox.FormattingEnabled = true;
-            this.flowControl_comboBox.Location = new System.Drawing.Point(58, 460);
+            this.flowControl_comboBox.Location = new System.Drawing.Point(58, 453);
             this.flowControl_comboBox.Margin = new System.Windows.Forms.Padding(5);
             this.flowControl_comboBox.Name = "flowControl_comboBox";
             this.flowControl_comboBox.Size = new System.Drawing.Size(199, 26);
             this.flowControl_comboBox.TabIndex = 34;
-            this.flowControl_comboBox.SelectedIndexChanged += new System.EventHandler(this.flowControl_comboBox_SelectedIndexChanged);
             // 
             // timeout_lbl
             // 
             this.timeout_lbl.AutoSize = true;
-            this.timeout_lbl.Location = new System.Drawing.Point(62, 520);
+            this.timeout_lbl.Location = new System.Drawing.Point(59, 507);
             this.timeout_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.timeout_lbl.Name = "timeout_lbl";
             this.timeout_lbl.Size = new System.Drawing.Size(118, 18);
@@ -352,17 +333,16 @@ namespace PAMC_104
             // 
             // timeout_form
             // 
-            this.timeout_form.Location = new System.Drawing.Point(62, 547);
+            this.timeout_form.Location = new System.Drawing.Point(62, 530);
             this.timeout_form.Margin = new System.Windows.Forms.Padding(5);
             this.timeout_form.Name = "timeout_form";
             this.timeout_form.Size = new System.Drawing.Size(199, 25);
             this.timeout_form.TabIndex = 36;
             this.timeout_form.Text = "10000";
-            this.timeout_form.TextChanged += new System.EventHandler(this.timeout_form_TextChanged);
             // 
             // conToggle_btn
             // 
-            this.conToggle_btn.Location = new System.Drawing.Point(100, 610);
+            this.conToggle_btn.Location = new System.Drawing.Point(100, 600);
             this.conToggle_btn.Margin = new System.Windows.Forms.Padding(5);
             this.conToggle_btn.Name = "conToggle_btn";
             this.conToggle_btn.Size = new System.Drawing.Size(125, 35);
@@ -374,7 +354,7 @@ namespace PAMC_104
             // logTextBox
             // 
             this.logTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logTextBox.Location = new System.Drawing.Point(486, 750);
+            this.logTextBox.Location = new System.Drawing.Point(486, 733);
             this.logTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
@@ -410,13 +390,12 @@ namespace PAMC_104
             // 
             // axis_groupBox
             // 
-            this.axis_groupBox.Controls.Add(this.axis_lbl);
             this.axis_groupBox.Controls.Add(this.axis_ComboBox);
             this.axis_groupBox.Location = new System.Drawing.Point(116, 890);
             this.axis_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.axis_groupBox.Name = "axis_groupBox";
             this.axis_groupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.axis_groupBox.Size = new System.Drawing.Size(330, 103);
+            this.axis_groupBox.Size = new System.Drawing.Size(330, 86);
             this.axis_groupBox.TabIndex = 41;
             this.axis_groupBox.TabStop = false;
             this.axis_groupBox.Text = "Axis";
@@ -517,7 +496,6 @@ namespace PAMC_104
             this.connect_groupBox.ResumeLayout(false);
             this.connect_groupBox.PerformLayout();
             this.axis_groupBox.ResumeLayout(false);
-            this.axis_groupBox.PerformLayout();
             this.driverController_groupBox.ResumeLayout(false);
             this.driverController_groupBox.PerformLayout();
             this.indicator_groupBox.ResumeLayout(false);
@@ -545,7 +523,6 @@ namespace PAMC_104
         private System.Windows.Forms.Label port;
         private System.Windows.Forms.Button excute_btn;
         private System.Windows.Forms.ComboBox axis_ComboBox;
-        private System.Windows.Forms.Label axis_lbl;
         private System.Windows.Forms.Label baudRate_lbl;
         private System.Windows.Forms.TextBox baudRate_form;
         private System.Windows.Forms.Label dataBits_lbl;

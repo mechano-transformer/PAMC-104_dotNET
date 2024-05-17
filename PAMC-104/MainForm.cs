@@ -10,7 +10,7 @@ namespace PAMC_104
     public partial class MainForm : Form
     {
         private RS232C rs232c;
-        private string[] axis = { "None", "Axis1", "Axis2", "Axix3", "Axis4" };
+        private string[] axis = { "None", "Axis1", "Axis2", "Axis3", "Axis4" };
         private StopBits[] stopBits = { StopBits.One, StopBits.Two, StopBits.OnePointFive };
         private Parity[] parities = { Parity.None, Parity.Odd, Parity.Even, Parity.Mark, Parity.Space };
         private string[] flowControls = { "None", "XON/XOFF", "RTS/CTS", "XON/XOFF & RTS/CTS", "DTR/DSR", "XON/XOFF & DTR/DSR" };
@@ -172,68 +172,6 @@ namespace PAMC_104
             }
         }
 
-        private void port_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            portSettings.Name = port_ComboBox.SelectedItem.ToString();
-        }
-
-        private void baudRate_form_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                portSettings.BaudRate = int.Parse(baudRate_form.Text);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-                // 変換に失敗した場合の処理
-                // エラーメッセージを表示するなど
-            }
-        }
-
-        private void dataBits_form_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                portSettings.DataBits = int.Parse(dataBits_form.Text);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-                // 変換に失敗した場合の処理
-                // エラーメッセージを表示するなど
-            }
-        }
-
-        private void parity_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            portSettings.Parity = parities[parity_comboBox.SelectedIndex];
-        }
-
-        private void stopBits_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            portSettings.StopBits = stopBits[stopBits_comboBox.SelectedIndex];
-        }
-
-        private void flowControl_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            portSettings.FlowControl = flowControls[flowControl_comboBox.SelectedIndex];
-        }
-
-        private void timeout_form_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                portSettings.Timeout = int.Parse(timeout_form.Text);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-                // 変換に失敗した場合の処理
-                // エラーメッセージを表示するなど
-            }
-        }
-
         /// <summary>
         /// ログを GUI 上に追加表示
         /// logTextBoxへのアクセサメソッド
@@ -306,22 +244,11 @@ namespace PAMC_104
         {
             portSettings.Name = port_ComboBox.SelectedItem.ToString();
             portSettings.BaudRate = int.Parse(baudRate_form.Text);
-
             portSettings.DataBits = int.Parse(dataBits_form.Text);
-
             portSettings.Parity = parities[parity_comboBox.SelectedIndex];
-
             portSettings.StopBits = stopBits[stopBits_comboBox.SelectedIndex];
-
             portSettings.FlowControl = flowControls[flowControl_comboBox.SelectedIndex];
-
             portSettings.Timeout = int.Parse(timeout_form.Text);
-
-        }
-
-        private void axis_lbl_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
