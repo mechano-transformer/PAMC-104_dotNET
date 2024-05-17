@@ -2,6 +2,7 @@
 using System.Data;
 using System.IO.Ports;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PAMC_104
@@ -86,14 +87,18 @@ namespace PAMC_104
 
         private async void excute_btn_Click(object sender, EventArgs e)
         {
+            DisableAllButtons();
             string command = cmdDirection_text.Text + cmdFrequency_text.Text + cmdNumOfPulses_text.Text + cmdPort_text.Text;
             await rs232c.Send(command);
+
+            await Task.Delay(3000);
+
             // コマンド実行終了したら明示的にストップする
             // TODO: タイマーを入れるべきか検討
             ExcuteStopCommand(); 
 
             SetStatusMessage("Sent command successfully.");
-
+            EnableAllButtons();
         }
 
         private void axis_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -264,6 +269,23 @@ namespace PAMC_104
         {
             // コマンド：「S]を送ればストップできる
             await rs232c.Send("S");
+        }
+
+        private void DisableAllButtons()
+        {
+            conToggle_btn.Enabled = false;
+            excute_btn.Enabled= false;
+            plus_btn.Enabled= false;
+            minus_btn.Enabled = false;
+
+        }
+        private void EnableAllButtons()
+        {
+            conToggle_btn.Enabled = true;
+            excute_btn.Enabled = true;
+            plus_btn.Enabled = true;
+            minus_btn.Enabled = true;
+
         }
     }
 }
