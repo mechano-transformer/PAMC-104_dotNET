@@ -21,12 +21,13 @@ namespace PAMC_104
 
     }
 
+
     public class RS232C
     {
         public bool isPortConnected = false;
         public string[] ports;
         SerialPort _serialPort;
-        string DELIMITER = "\r\n";
+        string DELIMITER = Environment.NewLine; // WindowsだとCRLFになる
         private  Logger _logger;
 
         public RS232C(SerialPort serialPort, PortSettings portSettings)
