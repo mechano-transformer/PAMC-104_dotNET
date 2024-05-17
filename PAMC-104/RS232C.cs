@@ -30,13 +30,21 @@ namespace PAMC_104
 
         public RS232C(SerialPort serialPort, PortSettings portSettings)
         {
-            // ポート情報を初期化
-            _serialPort = serialPort;
-            _serialPort.PortName = portSettings.Name;
-            _serialPort.BaudRate = portSettings.BaudRate;
-            _serialPort.DataBits = portSettings.DataBits;
-            _serialPort.Parity = portSettings.Parity;
-            _serialPort.StopBits = portSettings.StopBits;
+            try
+            {
+                // ポート情報を初期化
+                _serialPort = serialPort;
+                _serialPort.PortName = portSettings.Name;
+                _serialPort.BaudRate = portSettings.BaudRate;
+                _serialPort.DataBits = portSettings.DataBits;
+                _serialPort.Parity = portSettings.Parity;
+                _serialPort.StopBits = portSettings.StopBits;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         public static string[] GetPortNames()
@@ -57,7 +65,7 @@ namespace PAMC_104
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -77,7 +85,7 @@ namespace PAMC_104
                 System.Console.WriteLine(content); // とりあえず動作検証用にコンソール出力
                 // _serialPort.Write(content); // 本チャンはこうやってRS232C経由で書きこむ
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
 
             }

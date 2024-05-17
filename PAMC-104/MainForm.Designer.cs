@@ -64,9 +64,10 @@
             // 
             // plus_btn
             // 
-            this.plus_btn.Location = new System.Drawing.Point(756, 172);
+            this.plus_btn.Location = new System.Drawing.Point(1008, 215);
+            this.plus_btn.Margin = new System.Windows.Forms.Padding(4);
             this.plus_btn.Name = "plus_btn";
-            this.plus_btn.Size = new System.Drawing.Size(31, 34);
+            this.plus_btn.Size = new System.Drawing.Size(41, 42);
             this.plus_btn.TabIndex = 0;
             this.plus_btn.Text = "+";
             this.plus_btn.UseVisualStyleBackColor = true;
@@ -74,9 +75,10 @@
             // 
             // minus_btn
             // 
-            this.minus_btn.Location = new System.Drawing.Point(793, 172);
+            this.minus_btn.Location = new System.Drawing.Point(1057, 215);
+            this.minus_btn.Margin = new System.Windows.Forms.Padding(4);
             this.minus_btn.Name = "minus_btn";
-            this.minus_btn.Size = new System.Drawing.Size(32, 34);
+            this.minus_btn.Size = new System.Drawing.Size(43, 42);
             this.minus_btn.TabIndex = 1;
             this.minus_btn.Text = "-";
             this.minus_btn.UseVisualStyleBackColor = true;
@@ -84,109 +86,120 @@
             // 
             // frequency_form
             // 
-            this.frequency_form.Location = new System.Drawing.Point(756, 251);
+            this.frequency_form.Location = new System.Drawing.Point(1008, 314);
+            this.frequency_form.Margin = new System.Windows.Forms.Padding(4);
             this.frequency_form.Name = "frequency_form";
-            this.frequency_form.Size = new System.Drawing.Size(100, 19);
+            this.frequency_form.Size = new System.Drawing.Size(132, 22);
             this.frequency_form.TabIndex = 2;
             this.frequency_form.TextChanged += new System.EventHandler(this.frequency_form_TextChanged);
             // 
             // frequency_lbl
             // 
             this.frequency_lbl.AutoSize = true;
-            this.frequency_lbl.Location = new System.Drawing.Point(756, 233);
+            this.frequency_lbl.Location = new System.Drawing.Point(1008, 291);
+            this.frequency_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.frequency_lbl.Name = "frequency_lbl";
-            this.frequency_lbl.Size = new System.Drawing.Size(55, 12);
+            this.frequency_lbl.Size = new System.Drawing.Size(71, 15);
             this.frequency_lbl.TabIndex = 3;
             this.frequency_lbl.Text = "frequency";
             // 
             // numOfPulses_lbl
             // 
             this.numOfPulses_lbl.AutoSize = true;
-            this.numOfPulses_lbl.Location = new System.Drawing.Point(758, 304);
+            this.numOfPulses_lbl.Location = new System.Drawing.Point(1011, 380);
+            this.numOfPulses_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numOfPulses_lbl.Name = "numOfPulses_lbl";
-            this.numOfPulses_lbl.Size = new System.Drawing.Size(62, 12);
+            this.numOfPulses_lbl.Size = new System.Drawing.Size(78, 15);
             this.numOfPulses_lbl.TabIndex = 4;
             this.numOfPulses_lbl.Text = "# of pulses";
             // 
             // numOfPulses_form
             // 
-            this.numOfPulses_form.Location = new System.Drawing.Point(758, 320);
+            this.numOfPulses_form.Location = new System.Drawing.Point(1011, 400);
+            this.numOfPulses_form.Margin = new System.Windows.Forms.Padding(4);
             this.numOfPulses_form.Name = "numOfPulses_form";
-            this.numOfPulses_form.Size = new System.Drawing.Size(100, 19);
+            this.numOfPulses_form.Size = new System.Drawing.Size(132, 22);
             this.numOfPulses_form.TabIndex = 5;
             this.numOfPulses_form.TextChanged += new System.EventHandler(this.numOfPulses_form_TextChanged);
             // 
             // cmdToSend_lbl
             // 
             this.cmdToSend_lbl.AutoSize = true;
-            this.cmdToSend_lbl.Location = new System.Drawing.Point(756, 365);
+            this.cmdToSend_lbl.Location = new System.Drawing.Point(1008, 456);
+            this.cmdToSend_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmdToSend_lbl.Name = "cmdToSend_lbl";
-            this.cmdToSend_lbl.Size = new System.Drawing.Size(96, 17);
+            this.cmdToSend_lbl.Size = new System.Drawing.Size(120, 20);
             this.cmdToSend_lbl.TabIndex = 6;
             this.cmdToSend_lbl.Text = "command to send";
             this.cmdToSend_lbl.UseCompatibleTextRendering = true;
             // 
             // cmdDirection_text
             // 
-            this.cmdDirection_text.Location = new System.Drawing.Point(758, 386);
+            this.cmdDirection_text.Location = new System.Drawing.Point(1011, 482);
+            this.cmdDirection_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdDirection_text.Name = "cmdDirection_text";
             this.cmdDirection_text.ReadOnly = true;
-            this.cmdDirection_text.Size = new System.Drawing.Size(29, 19);
+            this.cmdDirection_text.Size = new System.Drawing.Size(37, 22);
             this.cmdDirection_text.TabIndex = 7;
             this.cmdDirection_text.Text = "NR";
             this.cmdDirection_text.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cmdFrequency_text
             // 
-            this.cmdFrequency_text.Location = new System.Drawing.Point(791, 386);
+            this.cmdFrequency_text.Location = new System.Drawing.Point(1055, 482);
+            this.cmdFrequency_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdFrequency_text.Name = "cmdFrequency_text";
             this.cmdFrequency_text.ReadOnly = true;
-            this.cmdFrequency_text.Size = new System.Drawing.Size(45, 19);
+            this.cmdFrequency_text.Size = new System.Drawing.Size(59, 22);
             this.cmdFrequency_text.TabIndex = 8;
             this.cmdFrequency_text.Text = "0000";
             // 
             // cmdNumOfPulses_text
             // 
-            this.cmdNumOfPulses_text.Location = new System.Drawing.Point(839, 386);
+            this.cmdNumOfPulses_text.Location = new System.Drawing.Point(1119, 482);
+            this.cmdNumOfPulses_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdNumOfPulses_text.Name = "cmdNumOfPulses_text";
             this.cmdNumOfPulses_text.ReadOnly = true;
-            this.cmdNumOfPulses_text.Size = new System.Drawing.Size(47, 19);
+            this.cmdNumOfPulses_text.Size = new System.Drawing.Size(61, 22);
             this.cmdNumOfPulses_text.TabIndex = 9;
             this.cmdNumOfPulses_text.Text = "0000";
             // 
             // cmdPort_text
             // 
-            this.cmdPort_text.Location = new System.Drawing.Point(888, 386);
+            this.cmdPort_text.Location = new System.Drawing.Point(1184, 482);
+            this.cmdPort_text.Margin = new System.Windows.Forms.Padding(4);
             this.cmdPort_text.Name = "cmdPort_text";
             this.cmdPort_text.ReadOnly = true;
-            this.cmdPort_text.Size = new System.Drawing.Size(29, 19);
+            this.cmdPort_text.Size = new System.Drawing.Size(37, 22);
             this.cmdPort_text.TabIndex = 10;
             this.cmdPort_text.Text = "A";
             // 
             // port_ComboBox
             // 
             this.port_ComboBox.FormattingEnabled = true;
-            this.port_ComboBox.Location = new System.Drawing.Point(108, 186);
+            this.port_ComboBox.Location = new System.Drawing.Point(144, 232);
+            this.port_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.port_ComboBox.Name = "port_ComboBox";
-            this.port_ComboBox.Size = new System.Drawing.Size(121, 20);
+            this.port_ComboBox.Size = new System.Drawing.Size(160, 23);
             this.port_ComboBox.TabIndex = 11;
             this.port_ComboBox.SelectedIndexChanged += new System.EventHandler(this.port_ComboBox_SelectedIndexChanged);
             // 
             // port
             // 
             this.port.AutoSize = true;
-            this.port.Location = new System.Drawing.Point(106, 157);
+            this.port.Location = new System.Drawing.Point(141, 196);
+            this.port.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.port.Name = "port";
-            this.port.Size = new System.Drawing.Size(26, 12);
+            this.port.Size = new System.Drawing.Size(34, 15);
             this.port.TabIndex = 12;
             this.port.Text = "Port";
             // 
             // excute_btn
             // 
-            this.excute_btn.Enabled = false;
-            this.excute_btn.Location = new System.Drawing.Point(783, 474);
+            this.excute_btn.Location = new System.Drawing.Point(1044, 592);
+            this.excute_btn.Margin = new System.Windows.Forms.Padding(4);
             this.excute_btn.Name = "excute_btn";
-            this.excute_btn.Size = new System.Drawing.Size(75, 23);
+            this.excute_btn.Size = new System.Drawing.Size(100, 29);
             this.excute_btn.TabIndex = 13;
             this.excute_btn.Text = "Excute";
             this.excute_btn.UseVisualStyleBackColor = true;
@@ -195,35 +208,39 @@
             // axis_ComboBox
             // 
             this.axis_ComboBox.FormattingEnabled = true;
-            this.axis_ComboBox.Location = new System.Drawing.Point(108, 656);
+            this.axis_ComboBox.Location = new System.Drawing.Point(144, 820);
+            this.axis_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.axis_ComboBox.Name = "axis_ComboBox";
-            this.axis_ComboBox.Size = new System.Drawing.Size(121, 20);
+            this.axis_ComboBox.Size = new System.Drawing.Size(160, 23);
             this.axis_ComboBox.TabIndex = 14;
             this.axis_ComboBox.SelectedIndexChanged += new System.EventHandler(this.axis_ComboBox_SelectedIndexChanged);
             // 
             // axis_lbl
             // 
             this.axis_lbl.AutoSize = true;
-            this.axis_lbl.Location = new System.Drawing.Point(106, 641);
+            this.axis_lbl.Location = new System.Drawing.Point(141, 801);
+            this.axis_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.axis_lbl.Name = "axis_lbl";
-            this.axis_lbl.Size = new System.Drawing.Size(28, 12);
+            this.axis_lbl.Size = new System.Drawing.Size(33, 15);
             this.axis_lbl.TabIndex = 15;
             this.axis_lbl.Text = "Axis";
             // 
             // baudRate_lbl
             // 
             this.baudRate_lbl.AutoSize = true;
-            this.baudRate_lbl.Location = new System.Drawing.Point(108, 233);
+            this.baudRate_lbl.Location = new System.Drawing.Point(144, 291);
+            this.baudRate_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.baudRate_lbl.Name = "baudRate_lbl";
-            this.baudRate_lbl.Size = new System.Drawing.Size(91, 12);
+            this.baudRate_lbl.Size = new System.Drawing.Size(116, 15);
             this.baudRate_lbl.TabIndex = 27;
             this.baudRate_lbl.Text = "band rate(19200)";
             // 
             // baudRate_form
             // 
-            this.baudRate_form.Location = new System.Drawing.Point(108, 251);
+            this.baudRate_form.Location = new System.Drawing.Point(144, 314);
+            this.baudRate_form.Margin = new System.Windows.Forms.Padding(4);
             this.baudRate_form.Name = "baudRate_form";
-            this.baudRate_form.Size = new System.Drawing.Size(100, 19);
+            this.baudRate_form.Size = new System.Drawing.Size(132, 22);
             this.baudRate_form.TabIndex = 26;
             this.baudRate_form.Text = "115200";
             this.baudRate_form.TextChanged += new System.EventHandler(this.baudRate_form_TextChanged);
@@ -231,17 +248,19 @@
             // dataBits_lbl
             // 
             this.dataBits_lbl.AutoSize = true;
-            this.dataBits_lbl.Location = new System.Drawing.Point(108, 286);
+            this.dataBits_lbl.Location = new System.Drawing.Point(144, 358);
+            this.dataBits_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dataBits_lbl.Name = "dataBits_lbl";
-            this.dataBits_lbl.Size = new System.Drawing.Size(64, 12);
+            this.dataBits_lbl.Size = new System.Drawing.Size(78, 15);
             this.dataBits_lbl.TabIndex = 29;
             this.dataBits_lbl.Text = "data bits(8)";
             // 
             // dataBits_form
             // 
-            this.dataBits_form.Location = new System.Drawing.Point(108, 304);
+            this.dataBits_form.Location = new System.Drawing.Point(144, 380);
+            this.dataBits_form.Margin = new System.Windows.Forms.Padding(4);
             this.dataBits_form.Name = "dataBits_form";
-            this.dataBits_form.Size = new System.Drawing.Size(100, 19);
+            this.dataBits_form.Size = new System.Drawing.Size(132, 22);
             this.dataBits_form.TabIndex = 28;
             this.dataBits_form.Text = "8";
             this.dataBits_form.TextChanged += new System.EventHandler(this.dataBits_form_TextChanged);
@@ -249,80 +268,89 @@
             // stopBits_lbl
             // 
             this.stopBits_lbl.AutoSize = true;
-            this.stopBits_lbl.Location = new System.Drawing.Point(108, 385);
+            this.stopBits_lbl.Location = new System.Drawing.Point(144, 481);
+            this.stopBits_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stopBits_lbl.Name = "stopBits_lbl";
-            this.stopBits_lbl.Size = new System.Drawing.Size(53, 12);
+            this.stopBits_lbl.Size = new System.Drawing.Size(66, 15);
             this.stopBits_lbl.TabIndex = 31;
             this.stopBits_lbl.Text = "Stop Bits";
             // 
             // stopBits_comboBox
             // 
             this.stopBits_comboBox.FormattingEnabled = true;
-            this.stopBits_comboBox.Location = new System.Drawing.Point(108, 400);
+            this.stopBits_comboBox.Location = new System.Drawing.Point(144, 500);
+            this.stopBits_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.stopBits_comboBox.Name = "stopBits_comboBox";
-            this.stopBits_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.stopBits_comboBox.Size = new System.Drawing.Size(160, 23);
             this.stopBits_comboBox.TabIndex = 30;
             this.stopBits_comboBox.SelectedIndexChanged += new System.EventHandler(this.stopBits_comboBox_SelectedIndexChanged);
             // 
             // parity_lbl
             // 
             this.parity_lbl.AutoSize = true;
-            this.parity_lbl.Location = new System.Drawing.Point(108, 338);
+            this.parity_lbl.Location = new System.Drawing.Point(144, 422);
+            this.parity_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.parity_lbl.Name = "parity_lbl";
-            this.parity_lbl.Size = new System.Drawing.Size(35, 12);
+            this.parity_lbl.Size = new System.Drawing.Size(43, 15);
             this.parity_lbl.TabIndex = 33;
             this.parity_lbl.Text = "Parity";
             // 
             // parity_comboBox
             // 
             this.parity_comboBox.FormattingEnabled = true;
-            this.parity_comboBox.Location = new System.Drawing.Point(108, 353);
+            this.parity_comboBox.Location = new System.Drawing.Point(144, 441);
+            this.parity_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.parity_comboBox.Name = "parity_comboBox";
-            this.parity_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.parity_comboBox.Size = new System.Drawing.Size(160, 23);
             this.parity_comboBox.TabIndex = 32;
             this.parity_comboBox.SelectedIndexChanged += new System.EventHandler(this.parity_comboBox_SelectedIndexChanged);
             // 
             // flowControl_lbl
             // 
             this.flowControl_lbl.AutoSize = true;
-            this.flowControl_lbl.Location = new System.Drawing.Point(108, 443);
+            this.flowControl_lbl.Location = new System.Drawing.Point(144, 554);
+            this.flowControl_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.flowControl_lbl.Name = "flowControl_lbl";
-            this.flowControl_lbl.Size = new System.Drawing.Size(70, 12);
+            this.flowControl_lbl.Size = new System.Drawing.Size(88, 15);
             this.flowControl_lbl.TabIndex = 35;
             this.flowControl_lbl.Text = "Flow Control";
             // 
             // flowControl_comboBox
             // 
             this.flowControl_comboBox.FormattingEnabled = true;
-            this.flowControl_comboBox.Location = new System.Drawing.Point(108, 458);
+            this.flowControl_comboBox.Location = new System.Drawing.Point(144, 572);
+            this.flowControl_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.flowControl_comboBox.Name = "flowControl_comboBox";
-            this.flowControl_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.flowControl_comboBox.Size = new System.Drawing.Size(160, 23);
             this.flowControl_comboBox.TabIndex = 34;
             this.flowControl_comboBox.SelectedIndexChanged += new System.EventHandler(this.flowControl_comboBox_SelectedIndexChanged);
             // 
             // timeout_lbl
             // 
             this.timeout_lbl.AutoSize = true;
-            this.timeout_lbl.Location = new System.Drawing.Point(110, 498);
+            this.timeout_lbl.Location = new System.Drawing.Point(147, 622);
+            this.timeout_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timeout_lbl.Name = "timeout_lbl";
-            this.timeout_lbl.Size = new System.Drawing.Size(81, 12);
+            this.timeout_lbl.Size = new System.Drawing.Size(104, 15);
             this.timeout_lbl.TabIndex = 37;
             this.timeout_lbl.Text = "timeout(10sec)";
             // 
             // timeout_form
             // 
-            this.timeout_form.Location = new System.Drawing.Point(110, 516);
+            this.timeout_form.Location = new System.Drawing.Point(147, 645);
+            this.timeout_form.Margin = new System.Windows.Forms.Padding(4);
             this.timeout_form.Name = "timeout_form";
-            this.timeout_form.Size = new System.Drawing.Size(100, 19);
+            this.timeout_form.Size = new System.Drawing.Size(132, 22);
             this.timeout_form.TabIndex = 36;
             this.timeout_form.Text = "10000";
             this.timeout_form.TextChanged += new System.EventHandler(this.timeout_form_TextChanged);
             // 
             // conToggle_btn
             // 
-            this.conToggle_btn.Location = new System.Drawing.Point(112, 576);
+            this.conToggle_btn.Location = new System.Drawing.Point(149, 720);
+            this.conToggle_btn.Margin = new System.Windows.Forms.Padding(4);
             this.conToggle_btn.Name = "conToggle_btn";
-            this.conToggle_btn.Size = new System.Drawing.Size(75, 23);
+            this.conToggle_btn.Size = new System.Drawing.Size(100, 29);
             this.conToggle_btn.TabIndex = 38;
             this.conToggle_btn.Text = "Connect";
             this.conToggle_btn.UseVisualStyleBackColor = true;
@@ -339,9 +367,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 877);
+            this.ClientSize = new System.Drawing.Size(1449, 1096);
+            this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.conToggle_btn);
             this.Controls.Add(this.timeout_lbl);
             this.Controls.Add(this.timeout_form);
@@ -371,8 +400,7 @@
             this.Controls.Add(this.frequency_form);
             this.Controls.Add(this.minus_btn);
             this.Controls.Add(this.plus_btn);
-            this.Enabled = false;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -413,6 +441,7 @@
         private System.Windows.Forms.Label timeout_lbl;
         private System.Windows.Forms.TextBox timeout_form;
         private System.Windows.Forms.Button conToggle_btn;
+        private System.Windows.Forms.TextBox logTextBox;
     }
 }
 

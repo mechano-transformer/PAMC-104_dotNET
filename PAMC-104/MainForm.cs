@@ -22,13 +22,18 @@ namespace PAMC_104
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            excute_btn.Enabled = false;
+
             portSettings = new PortSettings();
 
             // RS232C用ポート候補
             string[] ports = RS232C.GetPortNames();
-            foreach (string port in ports)
+            if (ports.Length > 0)
             {
-                port_ComboBox.Items.Add(port);
+                foreach (string port in ports)
+                {
+                    port_ComboBox.Items.Add(port);
+                }
             }
             if (port_ComboBox.Items.Count > 0)
                 port_ComboBox.SelectedIndex = 0;
@@ -42,8 +47,8 @@ namespace PAMC_104
             stopBits_comboBox.SelectedIndex = 0;
 
             // Parity選択用
-            axis_ComboBox.Items.AddRange(parities.Select(x=> x.ToString()).ToArray());
-            axis_ComboBox.SelectedIndex = 0;
+            parity_comboBox.Items.AddRange(parities.Select(x => x.ToString()).ToArray());
+            parity_comboBox.SelectedIndex = 0;
 
             // flow control選択用
             flowControl_comboBox.Items.AddRange(flowControls);
@@ -78,7 +83,7 @@ namespace PAMC_104
             }
         }
 
-        
+
         private void excute_btn_Click(object sender, EventArgs e)
         {
             string command = cmdDirection_text.Text + cmdFrequency_text.Text + cmdNumOfPulses_text.Text + cmdPort_text.Text;
@@ -87,7 +92,7 @@ namespace PAMC_104
 
         private void axis_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (axis_ComboBox.SelectedItem) 
+            switch (axis_ComboBox.SelectedItem)
             {
                 case "Axis1":
                     cmdPort_text.Text = "A";
@@ -113,16 +118,31 @@ namespace PAMC_104
             if (conToggle_btn.Text == "Connect")
             {
                 // Connectする
-                rs232c = new RS232C(serialPort, portSettings);
-                rs232c.Open();
+                try
+                {
+                    rs232c = new RS232C(serialPort, portSettings);
+                    rs232c.Open();
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
 
+                // コマンド実行ボタンの有効化
                 excute_btn.Enabled = true;
-
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Disconnect";
-            } 
+            }
             else if (conToggle_btn.Text == "Disconnect")
             {
+                try
+                {
+                    rs232c.Close();
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
 
                 excute_btn.Enabled = false;
 
