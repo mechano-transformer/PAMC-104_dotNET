@@ -24,6 +24,10 @@ namespace PAMC_104
 
     public class RS232C
     {
+        public static StopBits[] STOP_BITS { get; } = { StopBits.One, StopBits.Two, StopBits.OnePointFive };
+        public static Parity[] PARITIES { get; } = { Parity.None, Parity.Odd, Parity.Even, Parity.Mark, Parity.Space };
+        public static string[] FLOW_CONTROLS { get; } = { "None", "XON/XOFF", "RTS/CTS", "XON/XOFF & RTS/CTS", "DTR/DSR", "XON/XOFF & DTR/DSR" };
+
         public bool isPortConnected = false;
         public string[] ports;
         SerialPort _serialPort;

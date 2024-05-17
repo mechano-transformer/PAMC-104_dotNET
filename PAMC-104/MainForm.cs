@@ -11,9 +11,6 @@ namespace PAMC_104
     {
         private RS232C rs232c;
         private string[] axis = { "None", "Axis1", "Axis2", "Axis3", "Axis4" };
-        private StopBits[] stopBits = { StopBits.One, StopBits.Two, StopBits.OnePointFive };
-        private Parity[] parities = { Parity.None, Parity.Odd, Parity.Even, Parity.Mark, Parity.Space };
-        private string[] flowControls = { "None", "XON/XOFF", "RTS/CTS", "XON/XOFF & RTS/CTS", "DTR/DSR", "XON/XOFF & DTR/DSR" };
         private PortSettings portSettings;
         private Logger _logger;
 
@@ -46,15 +43,15 @@ namespace PAMC_104
             axis_ComboBox.SelectedIndex = 0;
 
             // Stop Bits選択用
-            stopBits_comboBox.Items.AddRange(stopBits.Select(x => x.ToString()).ToArray());
+            stopBits_comboBox.Items.AddRange(RS232C.STOP_BITS.Select(x => x.ToString()).ToArray());
             stopBits_comboBox.SelectedIndex = 0;
 
             // Parity選択用
-            parity_comboBox.Items.AddRange(parities.Select(x => x.ToString()).ToArray());
+            parity_comboBox.Items.AddRange(RS232C.PARITIES.Select(x => x.ToString()).ToArray());
             parity_comboBox.SelectedIndex = 0;
 
             // flow control選択用
-            flowControl_comboBox.Items.AddRange(flowControls);
+            flowControl_comboBox.Items.AddRange(RS232C.FLOW_CONTROLS);
             flowControl_comboBox.SelectedIndex = 0;
 
             _logger.Notice("Main loaded.");
@@ -245,9 +242,9 @@ namespace PAMC_104
             portSettings.Name = port_ComboBox.SelectedItem.ToString();
             portSettings.BaudRate = int.Parse(baudRate_form.Text);
             portSettings.DataBits = int.Parse(dataBits_form.Text);
-            portSettings.Parity = parities[parity_comboBox.SelectedIndex];
-            portSettings.StopBits = stopBits[stopBits_comboBox.SelectedIndex];
-            portSettings.FlowControl = flowControls[flowControl_comboBox.SelectedIndex];
+            portSettings.Parity = RS232C.PARITIES[parity_comboBox.SelectedIndex];
+            portSettings.StopBits = RS232C.STOP_BITS[stopBits_comboBox.SelectedIndex];
+            portSettings.FlowControl = RS232C.FLOW_CONTROLS[flowControl_comboBox.SelectedIndex];
             portSettings.Timeout = int.Parse(timeout_form.Text);
         }
     }
