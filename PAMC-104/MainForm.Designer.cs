@@ -59,6 +59,7 @@
             this.timeout_lbl = new System.Windows.Forms.Label();
             this.timeout_form = new System.Windows.Forms.TextBox();
             this.conToggle_btn = new System.Windows.Forms.Button();
+            this.logTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // plus_btn
@@ -326,6 +327,15 @@
             this.conToggle_btn.Text = "Connect";
             this.conToggle_btn.UseVisualStyleBackColor = true;
             this.conToggle_btn.Click += new System.EventHandler(this.conToggle_btn_Click);
+            // 
+            // logTextBox
+            // 
+            this.logTextBox.Location = new System.Drawing.Point(570, 687);
+            this.logTextBox.Multiline = true;
+            this.logTextBox.Name = "logTextBox";
+            this.logTextBox.ReadOnly = true;
+            this.logTextBox.Size = new System.Drawing.Size(713, 203);
+            this.logTextBox.TabIndex = 39;
             // 
             // MainForm
             // 

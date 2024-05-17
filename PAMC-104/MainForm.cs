@@ -192,5 +192,27 @@ namespace PAMC_104
                 // エラーメッセージを表示するなど
             }
         }
+
+        /// <summary>
+        /// ログを GUI 上に追加表示
+        /// logTextBoxへのアクセサメソッド
+        /// バッググラウンドスレッドからの実行はデフォルト許可されないので
+        /// 専用のUIスレッドを立てて実行するようにする
+        /// </summary>
+        /// <param name="text">表示するテキスト</param>
+        public void AppendGUILog(string text)
+        {
+            logTextBox.AppendText($"{text}\r\n");
+            //if (logTextBox.InvokeRequired)
+            //{
+            //    logTextBox.Invoke((Action)(() => {
+            //        logTextBox.AppendText($"{text}\r\n");
+            //    }));
+            //}
+            //else
+            //{
+            //    logTextBox.AppendText($"{text}\r\n");
+            //}
+        }
     }
 }

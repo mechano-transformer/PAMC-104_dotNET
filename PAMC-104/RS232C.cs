@@ -26,6 +26,7 @@ namespace PAMC_104
         public string[] ports;
         SerialPort _serialPort;
         string DELIMITER = "\r\n";
+        private static Logger _logger = new Logger();
 
         public RS232C(SerialPort serialPort, PortSettings portSettings)
         {
@@ -40,6 +41,7 @@ namespace PAMC_104
 
         public static string[] GetPortNames()
         {
+            _logger.Error("test");
             return SerialPort.GetPortNames();
         }
 
