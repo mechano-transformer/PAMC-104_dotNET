@@ -22,7 +22,7 @@ namespace PAMC_104
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            excute_btn.Enabled = false;
+            SetExcuteButtonEnability(false);
 
             portSettings = new PortSettings();
 
@@ -88,6 +88,9 @@ namespace PAMC_104
         {
             string command = cmdDirection_text.Text + cmdFrequency_text.Text + cmdNumOfPulses_text.Text + cmdPort_text.Text;
             rs232c.Send(command);
+
+            SetStatusMessage("Sent command successfully.");
+
         }
 
         private void axis_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,9 +132,10 @@ namespace PAMC_104
                 }
 
                 // コマンド実行ボタンの有効化
-                excute_btn.Enabled = true;
+                SetExcuteButtonEnability(true);
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Disconnect";
+                SetStatusMessage("Connected successfully.");
             }
             else if (conToggle_btn.Text == "Disconnect")
             {
@@ -144,10 +148,12 @@ namespace PAMC_104
                     return;
                 }
 
-                excute_btn.Enabled = false;
+                SetExcuteButtonEnability(false);
+
 
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Connect";
+                SetStatusMessage("Connection failed.");
             }
         }
 
@@ -233,6 +239,16 @@ namespace PAMC_104
             //{
             //    logTextBox.AppendText($"{text}\r\n");
             //}
+        }
+
+        private void SetStatusMessage(string text)
+        {
+            statusIndicator_text.Text = text;
+        }
+
+        private void SetExcuteButtonEnability(bool activate)
+        {
+            excute_btn.Enabled = activate;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Windows.Shapes.Ellipse;
-
+﻿
 namespace PAMC_104
 {
     partial class MainForm
@@ -67,9 +66,11 @@ namespace PAMC_104
             this.driverController_groupBox = new System.Windows.Forms.GroupBox();
             this.direction_lbl = new System.Windows.Forms.Label();
             this.indicator_groupBox = new System.Windows.Forms.GroupBox();
+            this.statusIndicator_text = new System.Windows.Forms.TextBox();
             this.connect_groupBox.SuspendLayout();
             this.axis_groupBox.SuspendLayout();
             this.driverController_groupBox.SuspendLayout();
+            this.indicator_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // plus_btn
@@ -444,12 +445,22 @@ namespace PAMC_104
             // 
             // indicator_groupBox
             // 
+            this.indicator_groupBox.Controls.Add(this.statusIndicator_text);
             this.indicator_groupBox.Location = new System.Drawing.Point(97, 760);
             this.indicator_groupBox.Name = "indicator_groupBox";
             this.indicator_groupBox.Size = new System.Drawing.Size(261, 152);
             this.indicator_groupBox.TabIndex = 43;
             this.indicator_groupBox.TabStop = false;
             this.indicator_groupBox.Text = "Status Indicator";
+            // 
+            // statusIndicator_text
+            // 
+            this.statusIndicator_text.Location = new System.Drawing.Point(35, 66);
+            this.statusIndicator_text.Name = "statusIndicator_text";
+            this.statusIndicator_text.ReadOnly = true;
+            this.statusIndicator_text.Size = new System.Drawing.Size(189, 22);
+            this.statusIndicator_text.TabIndex = 0;
+            this.statusIndicator_text.Text = "Stand by.";
             // 
             // MainForm
             // 
@@ -471,6 +482,8 @@ namespace PAMC_104
             this.axis_groupBox.PerformLayout();
             this.driverController_groupBox.ResumeLayout(false);
             this.driverController_groupBox.PerformLayout();
+            this.indicator_groupBox.ResumeLayout(false);
+            this.indicator_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,6 +527,7 @@ namespace PAMC_104
         private System.Windows.Forms.GroupBox driverController_groupBox;
         private System.Windows.Forms.Label direction_lbl;
         private System.Windows.Forms.GroupBox indicator_groupBox;
+        private System.Windows.Forms.TextBox statusIndicator_text;
     }
 }
 
