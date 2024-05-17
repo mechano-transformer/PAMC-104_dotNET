@@ -21,7 +21,7 @@ namespace PAMC_104
         protected readonly string logDirectoryPath = null;
         protected readonly string logFileName = null;
         protected readonly string logFilePath = null;  // ログファイルのフルパス(./Logs/console.log)
-        private static Logger _instance = null;
+        private static Logger _singleton = null;
         private int LOG_LEVEL = 3;
 
         /// <summary>
@@ -35,26 +35,27 @@ namespace PAMC_104
             NOTICE
         }
 
-        private MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault(); // MainFormへのアクセス用
-
+        private static MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault(); // MainFormへのアクセス用
+        //private MainForm mainForm;
         /// <summary>
         /// インスタンスを生成する
         /// シングルトンパターンとし、最初の初期化時のみ設定読み込みを行う。
         /// </summary>
-        public static Logger Instance
+        public static Logger GetInstance
         {
             get
             {
-                if (_instance == null)
+                if (_singleton == null)
                 {
-                    _instance = new Logger();
+                    _singleton = new Logger();
                 }
-                return _instance;
+                return _singleton;
             }
         }
 
         public Logger()
         {
+            //mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             logDirectoryPath = ".\\Logs\\";
             logFileName = "console";
 
@@ -142,7 +143,7 @@ namespace PAMC_104
                 if (level == LogLevel.ERROR || level == LogLevel.NOTICE || level == LogLevel.WARN)
                 {
                     //TODO:ここうまく動かない
-                    //mainForm.AppendGUILog(fullMsg);
+                    mainForm.AppendGUILog(fullMsg);
                 }
 
                 // 3. ファイルサイズ検証とログローテーション

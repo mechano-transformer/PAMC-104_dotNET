@@ -27,10 +27,11 @@ namespace PAMC_104
         public string[] ports;
         SerialPort _serialPort;
         string DELIMITER = "\r\n";
-        private Logger _logger = Logger.Instance;
+        private  Logger _logger;
 
         public RS232C(SerialPort serialPort, PortSettings portSettings)
         {
+            _logger = Logger.GetInstance;
             try
             {
                 // ポート情報を初期化

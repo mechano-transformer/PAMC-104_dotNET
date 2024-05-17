@@ -68,6 +68,7 @@ namespace PAMC_104
             this.direction_lbl = new System.Windows.Forms.Label();
             this.indicator_groupBox = new System.Windows.Forms.GroupBox();
             this.statusIndicator_text = new System.Windows.Forms.TextBox();
+            this.TITLE = new System.Windows.Forms.Label();
             this.connect_groupBox.SuspendLayout();
             this.axis_groupBox.SuspendLayout();
             this.driverController_groupBox.SuspendLayout();
@@ -76,10 +77,10 @@ namespace PAMC_104
             // 
             // plus_btn
             // 
-            this.plus_btn.Location = new System.Drawing.Point(80, 79);
+            this.plus_btn.Location = new System.Drawing.Point(82, 79);
             this.plus_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.plus_btn.Name = "plus_btn";
-            this.plus_btn.Size = new System.Drawing.Size(51, 50);
+            this.plus_btn.Size = new System.Drawing.Size(102, 50);
             this.plus_btn.TabIndex = 0;
             this.plus_btn.Text = "+";
             this.plus_btn.UseVisualStyleBackColor = true;
@@ -87,10 +88,10 @@ namespace PAMC_104
             // 
             // minus_btn
             // 
-            this.minus_btn.Location = new System.Drawing.Point(141, 79);
+            this.minus_btn.Location = new System.Drawing.Point(194, 79);
             this.minus_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.minus_btn.Name = "minus_btn";
-            this.minus_btn.Size = new System.Drawing.Size(54, 50);
+            this.minus_btn.Size = new System.Drawing.Size(105, 50);
             this.minus_btn.TabIndex = 1;
             this.minus_btn.Text = "-";
             this.minus_btn.UseVisualStyleBackColor = true;
@@ -236,11 +237,12 @@ namespace PAMC_104
             this.axis_lbl.Size = new System.Drawing.Size(39, 18);
             this.axis_lbl.TabIndex = 15;
             this.axis_lbl.Text = "Axis";
+            this.axis_lbl.Click += new System.EventHandler(this.axis_lbl_Click);
             // 
             // baudRate_lbl
             // 
             this.baudRate_lbl.AutoSize = true;
-            this.baudRate_lbl.Location = new System.Drawing.Point(60, 134);
+            this.baudRate_lbl.Location = new System.Drawing.Point(58, 122);
             this.baudRate_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.baudRate_lbl.Name = "baudRate_lbl";
             this.baudRate_lbl.Size = new System.Drawing.Size(134, 18);
@@ -249,10 +251,10 @@ namespace PAMC_104
             // 
             // baudRate_form
             // 
-            this.baudRate_form.Location = new System.Drawing.Point(60, 162);
+            this.baudRate_form.Location = new System.Drawing.Point(58, 150);
             this.baudRate_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.baudRate_form.Name = "baudRate_form";
-            this.baudRate_form.Size = new System.Drawing.Size(164, 25);
+            this.baudRate_form.Size = new System.Drawing.Size(203, 25);
             this.baudRate_form.TabIndex = 26;
             this.baudRate_form.Text = "115200";
             this.baudRate_form.TextChanged += new System.EventHandler(this.baudRate_form_TextChanged);
@@ -260,7 +262,7 @@ namespace PAMC_104
             // dataBits_lbl
             // 
             this.dataBits_lbl.AutoSize = true;
-            this.dataBits_lbl.Location = new System.Drawing.Point(60, 215);
+            this.dataBits_lbl.Location = new System.Drawing.Point(58, 203);
             this.dataBits_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.dataBits_lbl.Name = "dataBits_lbl";
             this.dataBits_lbl.Size = new System.Drawing.Size(92, 18);
@@ -269,10 +271,10 @@ namespace PAMC_104
             // 
             // dataBits_form
             // 
-            this.dataBits_form.Location = new System.Drawing.Point(60, 241);
+            this.dataBits_form.Location = new System.Drawing.Point(58, 229);
             this.dataBits_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dataBits_form.Name = "dataBits_form";
-            this.dataBits_form.Size = new System.Drawing.Size(164, 25);
+            this.dataBits_form.Size = new System.Drawing.Size(203, 25);
             this.dataBits_form.TabIndex = 28;
             this.dataBits_form.Text = "8";
             this.dataBits_form.TextChanged += new System.EventHandler(this.dataBits_form_TextChanged);
@@ -280,7 +282,7 @@ namespace PAMC_104
             // stopBits_lbl
             // 
             this.stopBits_lbl.AutoSize = true;
-            this.stopBits_lbl.Location = new System.Drawing.Point(60, 362);
+            this.stopBits_lbl.Location = new System.Drawing.Point(58, 350);
             this.stopBits_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.stopBits_lbl.Name = "stopBits_lbl";
             this.stopBits_lbl.Size = new System.Drawing.Size(77, 18);
@@ -290,7 +292,7 @@ namespace PAMC_104
             // stopBits_comboBox
             // 
             this.stopBits_comboBox.FormattingEnabled = true;
-            this.stopBits_comboBox.Location = new System.Drawing.Point(60, 385);
+            this.stopBits_comboBox.Location = new System.Drawing.Point(58, 373);
             this.stopBits_comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.stopBits_comboBox.Name = "stopBits_comboBox";
             this.stopBits_comboBox.Size = new System.Drawing.Size(199, 26);
@@ -300,7 +302,7 @@ namespace PAMC_104
             // parity_lbl
             // 
             this.parity_lbl.AutoSize = true;
-            this.parity_lbl.Location = new System.Drawing.Point(60, 292);
+            this.parity_lbl.Location = new System.Drawing.Point(58, 280);
             this.parity_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.parity_lbl.Name = "parity_lbl";
             this.parity_lbl.Size = new System.Drawing.Size(53, 18);
@@ -310,7 +312,7 @@ namespace PAMC_104
             // parity_comboBox
             // 
             this.parity_comboBox.FormattingEnabled = true;
-            this.parity_comboBox.Location = new System.Drawing.Point(60, 314);
+            this.parity_comboBox.Location = new System.Drawing.Point(58, 302);
             this.parity_comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.parity_comboBox.Name = "parity_comboBox";
             this.parity_comboBox.Size = new System.Drawing.Size(199, 26);
@@ -320,7 +322,7 @@ namespace PAMC_104
             // flowControl_lbl
             // 
             this.flowControl_lbl.AutoSize = true;
-            this.flowControl_lbl.Location = new System.Drawing.Point(60, 450);
+            this.flowControl_lbl.Location = new System.Drawing.Point(58, 438);
             this.flowControl_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.flowControl_lbl.Name = "flowControl_lbl";
             this.flowControl_lbl.Size = new System.Drawing.Size(103, 18);
@@ -330,7 +332,7 @@ namespace PAMC_104
             // flowControl_comboBox
             // 
             this.flowControl_comboBox.FormattingEnabled = true;
-            this.flowControl_comboBox.Location = new System.Drawing.Point(60, 472);
+            this.flowControl_comboBox.Location = new System.Drawing.Point(58, 460);
             this.flowControl_comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.flowControl_comboBox.Name = "flowControl_comboBox";
             this.flowControl_comboBox.Size = new System.Drawing.Size(199, 26);
@@ -340,7 +342,7 @@ namespace PAMC_104
             // timeout_lbl
             // 
             this.timeout_lbl.AutoSize = true;
-            this.timeout_lbl.Location = new System.Drawing.Point(64, 532);
+            this.timeout_lbl.Location = new System.Drawing.Point(62, 520);
             this.timeout_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.timeout_lbl.Name = "timeout_lbl";
             this.timeout_lbl.Size = new System.Drawing.Size(118, 18);
@@ -349,10 +351,10 @@ namespace PAMC_104
             // 
             // timeout_form
             // 
-            this.timeout_form.Location = new System.Drawing.Point(64, 559);
+            this.timeout_form.Location = new System.Drawing.Point(62, 547);
             this.timeout_form.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.timeout_form.Name = "timeout_form";
-            this.timeout_form.Size = new System.Drawing.Size(164, 25);
+            this.timeout_form.Size = new System.Drawing.Size(199, 25);
             this.timeout_form.TabIndex = 36;
             this.timeout_form.Text = "10000";
             this.timeout_form.TextChanged += new System.EventHandler(this.timeout_form_TextChanged);
@@ -371,12 +373,12 @@ namespace PAMC_104
             // logTextBox
             // 
             this.logTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logTextBox.Location = new System.Drawing.Point(490, 811);
+            this.logTextBox.Location = new System.Drawing.Point(486, 750);
             this.logTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
-            this.logTextBox.Size = new System.Drawing.Size(890, 243);
+            this.logTextBox.Size = new System.Drawing.Size(761, 243);
             this.logTextBox.TabIndex = 39;
             // 
             // connect_groupBox
@@ -396,7 +398,7 @@ namespace PAMC_104
             this.connect_groupBox.Controls.Add(this.baudRate_form);
             this.connect_groupBox.Controls.Add(this.port);
             this.connect_groupBox.Controls.Add(this.port_ComboBox);
-            this.connect_groupBox.Location = new System.Drawing.Point(140, 203);
+            this.connect_groupBox.Location = new System.Drawing.Point(118, 203);
             this.connect_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.connect_groupBox.Name = "connect_groupBox";
             this.connect_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -409,7 +411,7 @@ namespace PAMC_104
             // 
             this.axis_groupBox.Controls.Add(this.axis_lbl);
             this.axis_groupBox.Controls.Add(this.axis_ComboBox);
-            this.axis_groupBox.Location = new System.Drawing.Point(551, 203);
+            this.axis_groupBox.Location = new System.Drawing.Point(116, 890);
             this.axis_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.axis_groupBox.Name = "axis_groupBox";
             this.axis_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -434,7 +436,7 @@ namespace PAMC_104
             this.driverController_groupBox.Controls.Add(this.frequency_form);
             this.driverController_groupBox.Controls.Add(this.minus_btn);
             this.driverController_groupBox.Controls.Add(this.plus_btn);
-            this.driverController_groupBox.Location = new System.Drawing.Point(551, 328);
+            this.driverController_groupBox.Location = new System.Drawing.Point(486, 214);
             this.driverController_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.driverController_groupBox.Name = "driverController_groupBox";
             this.driverController_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -457,7 +459,7 @@ namespace PAMC_104
             // direction_lbl
             // 
             this.direction_lbl.AutoSize = true;
-            this.direction_lbl.Location = new System.Drawing.Point(82, 50);
+            this.direction_lbl.Location = new System.Drawing.Point(82, 53);
             this.direction_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.direction_lbl.Name = "direction_lbl";
             this.direction_lbl.Size = new System.Drawing.Size(73, 18);
@@ -467,7 +469,7 @@ namespace PAMC_104
             // indicator_groupBox
             // 
             this.indicator_groupBox.Controls.Add(this.statusIndicator_text);
-            this.indicator_groupBox.Location = new System.Drawing.Point(142, 888);
+            this.indicator_groupBox.Location = new System.Drawing.Point(921, 225);
             this.indicator_groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.indicator_groupBox.Name = "indicator_groupBox";
             this.indicator_groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -478,7 +480,7 @@ namespace PAMC_104
             // 
             // statusIndicator_text
             // 
-            this.statusIndicator_text.Location = new System.Drawing.Point(44, 79);
+            this.statusIndicator_text.Location = new System.Drawing.Point(43, 56);
             this.statusIndicator_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusIndicator_text.Name = "statusIndicator_text";
             this.statusIndicator_text.ReadOnly = true;
@@ -486,11 +488,21 @@ namespace PAMC_104
             this.statusIndicator_text.TabIndex = 0;
             this.statusIndicator_text.Text = "Stand by.";
             // 
+            // TITLE
+            // 
+            this.TITLE.AutoSize = true;
+            this.TITLE.Location = new System.Drawing.Point(615, 100);
+            this.TITLE.Name = "TITLE";
+            this.TITLE.Size = new System.Drawing.Size(110, 18);
+            this.TITLE.TabIndex = 44;
+            this.TITLE.Text = "（MT社のロゴ）";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1524, 1315);
+            this.ClientSize = new System.Drawing.Size(1344, 1053);
+            this.Controls.Add(this.TITLE);
             this.Controls.Add(this.indicator_groupBox);
             this.Controls.Add(this.driverController_groupBox);
             this.Controls.Add(this.axis_groupBox);
@@ -498,7 +510,7 @@ namespace PAMC_104
             this.Controls.Add(this.logTextBox);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "MainForm";
-            this.Text = "s";
+            this.Text = "PAMC-104";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.connect_groupBox.ResumeLayout(false);
             this.connect_groupBox.PerformLayout();
@@ -553,6 +565,7 @@ namespace PAMC_104
         private System.Windows.Forms.GroupBox indicator_groupBox;
         private System.Windows.Forms.TextBox statusIndicator_text;
         private System.Windows.Forms.Button stop_btn;
+        private System.Windows.Forms.Label TITLE;
     }
 }
 

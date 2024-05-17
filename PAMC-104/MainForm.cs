@@ -15,7 +15,7 @@ namespace PAMC_104
         private Parity[] parities = { Parity.None, Parity.Odd, Parity.Even, Parity.Mark, Parity.Space };
         private string[] flowControls = { "None", "XON/XOFF", "RTS/CTS", "XON/XOFF & RTS/CTS", "DTR/DSR", "XON/XOFF & DTR/DSR" };
         private PortSettings portSettings;
-        private Logger _logger = Logger.Instance;
+        private Logger _logger;
 
         public MainForm()
         {
@@ -24,6 +24,7 @@ namespace PAMC_104
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            _logger = Logger.GetInstance;
             SetExcuteButtonEnability(false);
 
             portSettings = new PortSettings();
@@ -57,7 +58,6 @@ namespace PAMC_104
             flowControl_comboBox.SelectedIndex = 0;
 
             _logger.Notice("Main loaded.");
-            AppendGUILog("Main loaded.");
         }
 
         private void plus_btn_Click(object sender, EventArgs e)
@@ -241,17 +241,17 @@ namespace PAMC_104
         /// <param name="text">表示するテキスト</param>
         public void AppendGUILog(string text)
         {
-            logTextBox.AppendText($"{text}\r\n");
-            //if (logTextBox.InvokeRequired)
-            //{
-            //    logTextBox.Invoke((Action)(() => {
-            //        logTextBox.AppendText($"{text}\r\n");
-            //    }));
-            //}
-            //else
-            //{
-            //    logTextBox.AppendText($"{text}\r\n");
-            //}
+            if (logTextBox.InvokeRequired)
+            {
+                logTextBox.Invoke((Action)(() =>
+                {
+                    logTextBox.AppendText($"{text}\r\n");
+                }));
+            }
+            else
+            {
+                logTextBox.AppendText($"{text}\r\n");
+            }
         }
 
         private void SetStatusMessage(string text)
@@ -310,5 +310,9 @@ namespace PAMC_104
 
         }
 
+        private void axis_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
