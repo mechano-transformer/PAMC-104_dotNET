@@ -76,7 +76,7 @@ namespace PAMC_104
         }
 
         // RS232C経由で情報を送信
-        public void Send(string content)
+        public Task Send(string content)
         {
             _serialPort.NewLine = DELIMITER;
             try
@@ -89,6 +89,7 @@ namespace PAMC_104
             {
 
             }
+            return Task.CompletedTask;
         }
 
         // RS232C経由で情報を受信

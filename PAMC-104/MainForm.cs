@@ -84,10 +84,13 @@ namespace PAMC_104
         }
 
 
-        private void excute_btn_Click(object sender, EventArgs e)
+        private async void excute_btn_Click(object sender, EventArgs e)
         {
             string command = cmdDirection_text.Text + cmdFrequency_text.Text + cmdNumOfPulses_text.Text + cmdPort_text.Text;
-            rs232c.Send(command);
+            await rs232c.Send(command);
+            // コマンド実行終了したら明示的にストップする
+            // TODO: タイマーを入れるべきか検討
+            ExcuteStopCommand(); 
 
             SetStatusMessage("Sent command successfully.");
 
@@ -249,6 +252,18 @@ namespace PAMC_104
         private void SetExcuteButtonEnability(bool activate)
         {
             excute_btn.Enabled = activate;
+        }
+
+        // STOP用のコマンドを実行する
+        private void stop_btn_Click(object sender, EventArgs e)
+        {
+            ExcuteStopCommand();
+        }
+
+        private async void ExcuteStopCommand()
+        {
+            // コマンド：「S]を送ればストップできる
+            await rs232c.Send("S");
         }
     }
 }

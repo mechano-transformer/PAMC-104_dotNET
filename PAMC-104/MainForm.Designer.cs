@@ -64,6 +64,7 @@ namespace PAMC_104
             this.connect_groupBox = new System.Windows.Forms.GroupBox();
             this.axis_groupBox = new System.Windows.Forms.GroupBox();
             this.driverController_groupBox = new System.Windows.Forms.GroupBox();
+            this.stop_btn = new System.Windows.Forms.Button();
             this.direction_lbl = new System.Windows.Forms.Label();
             this.indicator_groupBox = new System.Windows.Forms.GroupBox();
             this.statusIndicator_text = new System.Windows.Forms.TextBox();
@@ -207,7 +208,7 @@ namespace PAMC_104
             // 
             // excute_btn
             // 
-            this.excute_btn.Location = new System.Drawing.Point(86, 348);
+            this.excute_btn.Location = new System.Drawing.Point(66, 349);
             this.excute_btn.Margin = new System.Windows.Forms.Padding(4);
             this.excute_btn.Name = "excute_btn";
             this.excute_btn.Size = new System.Drawing.Size(100, 29);
@@ -413,6 +414,7 @@ namespace PAMC_104
             // 
             // driverController_groupBox
             // 
+            this.driverController_groupBox.Controls.Add(this.stop_btn);
             this.driverController_groupBox.Controls.Add(this.direction_lbl);
             this.driverController_groupBox.Controls.Add(this.excute_btn);
             this.driverController_groupBox.Controls.Add(this.cmdPort_text);
@@ -432,6 +434,16 @@ namespace PAMC_104
             this.driverController_groupBox.TabIndex = 42;
             this.driverController_groupBox.TabStop = false;
             this.driverController_groupBox.Text = "Driver Controller";
+            // 
+            // stop_btn
+            // 
+            this.stop_btn.Location = new System.Drawing.Point(177, 349);
+            this.stop_btn.Name = "stop_btn";
+            this.stop_btn.Size = new System.Drawing.Size(100, 29);
+            this.stop_btn.TabIndex = 44;
+            this.stop_btn.Text = "Stop";
+            this.stop_btn.UseVisualStyleBackColor = true;
+            this.stop_btn.Click += new System.EventHandler(this.stop_btn_Click);
             // 
             // direction_lbl
             // 
@@ -528,6 +540,7 @@ namespace PAMC_104
         private System.Windows.Forms.Label direction_lbl;
         private System.Windows.Forms.GroupBox indicator_groupBox;
         private System.Windows.Forms.TextBox statusIndicator_text;
+        private System.Windows.Forms.Button stop_btn;
     }
 }
 
