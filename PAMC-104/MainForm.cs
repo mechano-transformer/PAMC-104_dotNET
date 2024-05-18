@@ -2,6 +2,8 @@
 using System.Data;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -55,9 +57,12 @@ namespace PAMC_104
             flowControl_comboBox.Items.AddRange(RS232C.FLOW_CONTROLS);
             flowControl_comboBox.SelectedIndex = 0;
 
+            // アプリ名やアプリのバージョンなどのメタ情報
+            AssemblyName assembly = Assembly.GetExecutingAssembly().GetName();
+            Version ver = assembly.Version;
+            verInfo_text.Text = $"{ver.Major}.{ver.Minor}.{ver.Build}.{ver.Revision}";
             _logger.Notice("Main loaded.");
         }
-
         private void plus_btn_Click(object sender, EventArgs e)
         {
             cmdDirection_text.Text = "NR";
@@ -266,6 +271,5 @@ namespace PAMC_104
             // ただしBackSpaceキー等の制御キーは受け付ける
             return ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) || (textBox.Text.Length >= 4 && !char.IsControl(e.KeyChar)));
         }
-
     }
 }

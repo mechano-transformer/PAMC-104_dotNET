@@ -69,6 +69,8 @@ namespace PAMC_104
             this.indicator_groupBox = new System.Windows.Forms.GroupBox();
             this.statusIndicator_text = new System.Windows.Forms.TextBox();
             this.TITLE = new System.Windows.Forms.Label();
+            this.version_lbl = new System.Windows.Forms.Label();
+            this.verInfo_text = new System.Windows.Forms.TextBox();
             this.connect_groupBox.SuspendLayout();
             this.axis_groupBox.SuspendLayout();
             this.driverController_groupBox.SuspendLayout();
@@ -105,7 +107,6 @@ namespace PAMC_104
             this.frequency_form.Size = new System.Drawing.Size(164, 25);
             this.frequency_form.TabIndex = 2;
             this.frequency_form.TextChanged += new System.EventHandler(this.frequency_form_TextChanged);
-            this.frequency_form.KeyPress += this.frequency_form_KeyPress;
             // 
             // frequency_lbl
             // 
@@ -135,8 +136,6 @@ namespace PAMC_104
             this.numOfPulses_form.Size = new System.Drawing.Size(164, 25);
             this.numOfPulses_form.TabIndex = 5;
             this.numOfPulses_form.TextChanged += new System.EventHandler(this.numOfPulses_form_TextChanged);
-            this.numOfPulses_form.KeyPress += this.numOfPulses_form_KeyPress;
-
             // 
             // cmdToSend_lbl
             // 
@@ -480,11 +479,30 @@ namespace PAMC_104
             this.TITLE.TabIndex = 44;
             this.TITLE.Text = "（MT社のロゴ）";
             // 
+            // version_lbl
+            // 
+            this.version_lbl.AutoSize = true;
+            this.version_lbl.Location = new System.Drawing.Point(115, 993);
+            this.version_lbl.Name = "version_lbl";
+            this.version_lbl.Size = new System.Drawing.Size(73, 18);
+            this.version_lbl.TabIndex = 45;
+            this.version_lbl.Text = "Version: ";
+            // 
+            // verInfo_text
+            // 
+            this.verInfo_text.Location = new System.Drawing.Point(188, 993);
+            this.verInfo_text.Name = "verInfo_text";
+            this.verInfo_text.ReadOnly = true;
+            this.verInfo_text.Size = new System.Drawing.Size(122, 25);
+            this.verInfo_text.TabIndex = 46;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 1053);
+            this.ClientSize = new System.Drawing.Size(1344, 1027);
+            this.Controls.Add(this.verInfo_text);
+            this.Controls.Add(this.version_lbl);
             this.Controls.Add(this.TITLE);
             this.Controls.Add(this.indicator_groupBox);
             this.Controls.Add(this.driverController_groupBox);
@@ -548,6 +566,8 @@ namespace PAMC_104
         private System.Windows.Forms.TextBox statusIndicator_text;
         private System.Windows.Forms.Button stop_btn;
         private System.Windows.Forms.Label TITLE;
+        private System.Windows.Forms.Label version_lbl;
+        private System.Windows.Forms.TextBox verInfo_text;
     }
 }
 
