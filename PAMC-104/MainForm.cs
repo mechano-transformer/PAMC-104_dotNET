@@ -271,5 +271,10 @@ namespace PAMC_104
             // ただしBackSpaceキー等の制御キーは受け付ける
             return ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) || (textBox.Text.Length >= 4 && !char.IsControl(e.KeyChar)));
         }
+
+        private void axis_ComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

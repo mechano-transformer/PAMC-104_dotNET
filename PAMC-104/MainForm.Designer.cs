@@ -69,8 +69,8 @@ namespace PAMC_104
             this.indicator_groupBox = new System.Windows.Forms.GroupBox();
             this.statusIndicator_text = new System.Windows.Forms.TextBox();
             this.TITLE = new System.Windows.Forms.Label();
-            this.version_lbl = new System.Windows.Forms.Label();
             this.verInfo_text = new System.Windows.Forms.TextBox();
+            this.version_lbl = new System.Windows.Forms.Label();
             this.connect_groupBox.SuspendLayout();
             this.axis_groupBox.SuspendLayout();
             this.driverController_groupBox.SuspendLayout();
@@ -227,6 +227,7 @@ namespace PAMC_104
             this.axis_ComboBox.Name = "axis_ComboBox";
             this.axis_ComboBox.Size = new System.Drawing.Size(199, 26);
             this.axis_ComboBox.TabIndex = 14;
+            this.axis_ComboBox.SelectedIndexChanged += new System.EventHandler(this.axis_ComboBox_SelectedIndexChanged);
             // 
             // baudRate_lbl
             // 
@@ -356,7 +357,7 @@ namespace PAMC_104
             // logTextBox
             // 
             this.logTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logTextBox.Location = new System.Drawing.Point(486, 733);
+            this.logTextBox.Location = new System.Drawing.Point(486, 718);
             this.logTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
@@ -393,7 +394,7 @@ namespace PAMC_104
             // axis_groupBox
             // 
             this.axis_groupBox.Controls.Add(this.axis_ComboBox);
-            this.axis_groupBox.Location = new System.Drawing.Point(116, 890);
+            this.axis_groupBox.Location = new System.Drawing.Point(116, 875);
             this.axis_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.axis_groupBox.Name = "axis_groupBox";
             this.axis_groupBox.Padding = new System.Windows.Forms.Padding(4);
@@ -451,7 +452,7 @@ namespace PAMC_104
             // indicator_groupBox
             // 
             this.indicator_groupBox.Controls.Add(this.statusIndicator_text);
-            this.indicator_groupBox.Location = new System.Drawing.Point(921, 225);
+            this.indicator_groupBox.Location = new System.Drawing.Point(921, 214);
             this.indicator_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.indicator_groupBox.Name = "indicator_groupBox";
             this.indicator_groupBox.Padding = new System.Windows.Forms.Padding(4);
@@ -479,28 +480,28 @@ namespace PAMC_104
             this.TITLE.TabIndex = 44;
             this.TITLE.Text = "（MT社のロゴ）";
             // 
-            // version_lbl
-            // 
-            this.version_lbl.AutoSize = true;
-            this.version_lbl.Location = new System.Drawing.Point(115, 993);
-            this.version_lbl.Name = "version_lbl";
-            this.version_lbl.Size = new System.Drawing.Size(73, 18);
-            this.version_lbl.TabIndex = 45;
-            this.version_lbl.Text = "Version: ";
-            // 
             // verInfo_text
             // 
-            this.verInfo_text.Location = new System.Drawing.Point(188, 993);
+            this.verInfo_text.Location = new System.Drawing.Point(1125, 168);
             this.verInfo_text.Name = "verInfo_text";
             this.verInfo_text.ReadOnly = true;
             this.verInfo_text.Size = new System.Drawing.Size(122, 25);
-            this.verInfo_text.TabIndex = 46;
+            this.verInfo_text.TabIndex = 48;
+            // 
+            // version_lbl
+            // 
+            this.version_lbl.AutoSize = true;
+            this.version_lbl.Location = new System.Drawing.Point(1046, 171);
+            this.version_lbl.Name = "version_lbl";
+            this.version_lbl.Size = new System.Drawing.Size(73, 18);
+            this.version_lbl.TabIndex = 47;
+            this.version_lbl.Text = "Version: ";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 1027);
+            this.ClientSize = new System.Drawing.Size(1344, 975);
             this.Controls.Add(this.verInfo_text);
             this.Controls.Add(this.version_lbl);
             this.Controls.Add(this.TITLE);
@@ -566,8 +567,8 @@ namespace PAMC_104
         private System.Windows.Forms.TextBox statusIndicator_text;
         private System.Windows.Forms.Button stop_btn;
         private System.Windows.Forms.Label TITLE;
-        private System.Windows.Forms.Label version_lbl;
         private System.Windows.Forms.TextBox verInfo_text;
+        private System.Windows.Forms.Label version_lbl;
     }
 }
 
