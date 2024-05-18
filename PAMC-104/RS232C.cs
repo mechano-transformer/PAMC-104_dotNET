@@ -31,7 +31,7 @@ namespace PAMC_104
         public bool isPortConnected = false;
         public string[] ports;
         SerialPort _serialPort;
-        string DELIMITER = Environment.NewLine; // WindowsだとCRLFになる
+        string DELIMITER = "\r\n"; // WindowsだとCRLFになる
         private  Logger _logger;
 
         public RS232C(SerialPort serialPort, PortSettings portSettings)
@@ -86,11 +86,11 @@ namespace PAMC_104
         // RS232C経由で情報を送信
         public Task Send(string content)
         {
-            _serialPort.NewLine = DELIMITER;
             try
             {
-                _serialPort.Write(content); // 本チャンはこうやってRS232C経由で書きこむ
+                _serialPort.Write(content+ DELIMITER); // 本チャンはこうやってRS232C経由で書きこむ
                 _logger.Notice($"Excuted command: {content}");
+
             }
             catch (Exception ex)
             {
@@ -103,10 +103,9 @@ namespace PAMC_104
         // RS232C経由で情報を受信
         public void Receive(object sender, SerialDataReceivedEventArgs e)
         {
-            string dataReceived = "";
             try
             {
-                dataReceived = _serialPort.ReadLine();
+                string dataReceived = _serialPort.ReadLine();
                 MessageBox.Show(dataReceived);
 
             }
