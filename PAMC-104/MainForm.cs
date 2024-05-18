@@ -25,7 +25,9 @@ namespace PAMC_104
         private void MainForm_Load(object sender, EventArgs e)
         {
             _logger = Logger.GetInstance;
-            SetExcuteButtonEnable(false);
+            SetButtonEnable(excute_btn, false);
+            SetButtonEnable(stop_btn, false);
+
 
             portSettings = new PortSettings();
 
@@ -149,7 +151,9 @@ namespace PAMC_104
                 }
 
                 // コマンド実行ボタンの有効化
-                SetExcuteButtonEnable(true);
+                SetButtonEnable(excute_btn,true);
+                SetButtonEnable(stop_btn, true);
+
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Disconnect";
                 SetStatusMessage("Connected successfully.");
@@ -166,8 +170,8 @@ namespace PAMC_104
                     return;
                 }
 
-                SetExcuteButtonEnable(false);
-
+                SetButtonEnable(excute_btn, false);
+                SetButtonEnable(stop_btn, false);
 
                 // ボタンの表示を切り替える
                 conToggle_btn.Text = "Connect";
@@ -209,9 +213,9 @@ namespace PAMC_104
             }
         }
 
-        private void SetExcuteButtonEnable(bool activate)
+        private void SetButtonEnable(System.Windows.Forms.Button button, bool activate)
         {
-            excute_btn.Enabled = activate;
+            button.Enabled = activate;
         }
 
         // STOP用のコマンドを実行する
@@ -270,11 +274,6 @@ namespace PAMC_104
             // ４文字を超えるキー入力も受け付けない
             // ただしBackSpaceキー等の制御キーは受け付ける
             return ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) || (textBox.Text.Length >= 4 && !char.IsControl(e.KeyChar)));
-        }
-
-        private void axis_ComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
