@@ -114,9 +114,9 @@ namespace PAMC_104
             this.frequency_lbl.Location = new System.Drawing.Point(82, 139);
             this.frequency_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.frequency_lbl.Name = "frequency_lbl";
-            this.frequency_lbl.Size = new System.Drawing.Size(82, 18);
+            this.frequency_lbl.Size = new System.Drawing.Size(131, 27);
             this.frequency_lbl.TabIndex = 3;
-            this.frequency_lbl.Text = "frequency";
+            this.frequency_lbl.Text = "Frequency";
             // 
             // numOfPulses_lbl
             // 
@@ -143,9 +143,9 @@ namespace PAMC_104
             this.cmdToSend_lbl.Location = new System.Drawing.Point(80, 313);
             this.cmdToSend_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.cmdToSend_lbl.Name = "cmdToSend_lbl";
-            this.cmdToSend_lbl.Size = new System.Drawing.Size(143, 24);
+            this.cmdToSend_lbl.Size = new System.Drawing.Size(219, 36);
             this.cmdToSend_lbl.TabIndex = 6;
-            this.cmdToSend_lbl.Text = "command to send";
+            this.cmdToSend_lbl.Text = "Command to send";
             this.cmdToSend_lbl.UseCompatibleTextRendering = true;
             // 
             // cmdDirection_text
@@ -234,9 +234,9 @@ namespace PAMC_104
             this.baudRate_lbl.Location = new System.Drawing.Point(58, 122);
             this.baudRate_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.baudRate_lbl.Name = "baudRate_lbl";
-            this.baudRate_lbl.Size = new System.Drawing.Size(134, 18);
+            this.baudRate_lbl.Size = new System.Drawing.Size(212, 27);
             this.baudRate_lbl.TabIndex = 27;
-            this.baudRate_lbl.Text = "band rate(19200)";
+            this.baudRate_lbl.Text = "Baud Rate(19200)";
             // 
             // baudRate_form
             // 
@@ -253,9 +253,9 @@ namespace PAMC_104
             this.dataBits_lbl.Location = new System.Drawing.Point(58, 203);
             this.dataBits_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.dataBits_lbl.Name = "dataBits_lbl";
-            this.dataBits_lbl.Size = new System.Drawing.Size(92, 18);
+            this.dataBits_lbl.Size = new System.Drawing.Size(146, 27);
             this.dataBits_lbl.TabIndex = 29;
-            this.dataBits_lbl.Text = "data bits(8)";
+            this.dataBits_lbl.Text = "Data Bits(8)";
             // 
             // dataBits_form
             // 
@@ -329,9 +329,9 @@ namespace PAMC_104
             this.timeout_lbl.Location = new System.Drawing.Point(59, 507);
             this.timeout_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.timeout_lbl.Name = "timeout_lbl";
-            this.timeout_lbl.Size = new System.Drawing.Size(118, 18);
+            this.timeout_lbl.Size = new System.Drawing.Size(185, 27);
             this.timeout_lbl.TabIndex = 37;
-            this.timeout_lbl.Text = "timeout(10sec)";
+            this.timeout_lbl.Text = "Timeout(10sec)";
             // 
             // timeout_form
             // 
@@ -444,9 +444,9 @@ namespace PAMC_104
             this.direction_lbl.Location = new System.Drawing.Point(82, 53);
             this.direction_lbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.direction_lbl.Name = "direction_lbl";
-            this.direction_lbl.Size = new System.Drawing.Size(73, 18);
+            this.direction_lbl.Size = new System.Drawing.Size(114, 27);
             this.direction_lbl.TabIndex = 14;
-            this.direction_lbl.Text = "direction";
+            this.direction_lbl.Text = "Direction";
             // 
             // indicator_groupBox
             // 
